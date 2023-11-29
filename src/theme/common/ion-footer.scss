@@ -1,0 +1,16 @@
+ion-footer{
+    height: 70px;
+    .search-button {       
+        text-align: center;
+        font-size:$s;
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+       // color:color($colors,f-dark); 
+        ion-icon{
+            font-size:$s !important;
+            font-weight: bold;
+        }
+    }
+   
+}

@@ -1,0 +1,89 @@
+<!--
+  Generated template for the SearchProducePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title left>สำรวจราคาขายปลีก</ion-title>
+  </ion-navbar>
+
+  <ion-row class="bg-title">
+    <ion-col>
+      บันทึกการสำรวจ
+    </ion-col>
+  </ion-row>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div class="form-search">
+    
+  
+    <form [formGroup]="typeForm" class="header-form">
+      <div class="title-form">
+        ระบุรอบที่สำรวจ
+      </div>
+      <ion-list class="list-search-type" no-margin>
+
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="title-text" floating>ครั้งที่สำรวจ</ion-label>
+              <ion-select class="type-selest-option" formControlName="surveyPeriod" disabled ="{{isEnabled}}">
+                <ion-option *ngFor="let item of surveyPeriodOptions" value="{{item}}">{{item}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label class="title-text" floating>ปีที่สำรวจ</ion-label>
+              <ion-select class="type-selest-option" formControlName="surveyYear" disabled ="{{isEnabled}}">
+                <ion-option *ngFor="let item of surveyYearOptions" value="{{item}}">{{item}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-item>
+            <ion-label class="title-text" floating>วันที่สำรวจ</ion-label>
+            <ion-select class="type-selest-option" formControlName="surveyDate" disabled="true">
+              <ion-option *ngFor="let item of surveyDateOptions" value="{{item}}">{{item}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-row>
+ 
+      </ion-list>
+
+    </form>
+  
+
+  </div>
+  
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-row class="page-navigation">
+    
+    <ion-col class="previous">
+
+    </ion-col>
+    <ion-col class="next">
+      <button (tap)="nextPage()">
+        ถัดไป  <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+    </ion-col>
+
+  </ion-row>
+
+</ion-footer>

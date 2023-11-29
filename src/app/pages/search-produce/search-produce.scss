@@ -1,0 +1,140 @@
+page-search-produce {
+  ion-header {
+    .toolbar-title {
+      color: color($colors, f-dark);
+    }
+
+    .menuToggle,
+    ion-title {
+      color: color($colors, f-dark);
+      font-weight: bold !important;
+    }
+
+    .title-page {
+      font-size: $m;
+      white-space: nowrap;
+      padding-right: 10px;
+      width: 100%;
+      font-weight: bolder !important;
+      color: color($colors, f-dark);
+    }
+
+    button {
+      color: color($colors, f-white) !important;
+    }
+
+    .back-home {
+      width: $m;
+      margin-right: 10px;
+      fill: color($colors, f-dark) !important;
+    }
+    ion-segment {
+      ion-segment-button {
+        font-size: $xxs !important;
+        font-weight: bold !important;
+        text-transform: none !important;
+        color: color($colors, f-white) !important;
+        border-bottom: none !important;
+      }
+      .segment-activated {
+        color: color($colors, f-dark) !important;
+        background: color($colors, f-white) !important;
+        border-bottom: none !important;
+      }
+      ion-icon {
+        margin: auto;
+        font-size: $xs !important;
+        line-height: 1rem !important;
+      }
+    }
+  }
+  ion-content {
+    .red-star {
+      color: red;
+    }
+
+    .row-bottom {
+      padding: 20px 10px;
+      width: 100% !important;
+      margin: auto !important;
+      background: transparent;
+      padding-bottom: 0px !important;
+      .right-button {
+        // width : 20% !important;
+        margin: auto !important;
+        padding-left: 10px !important;
+      }
+      .left-button {
+        width: calc(100% - 70px);
+        margin: auto !important;
+        height: 100%;
+      }
+    }
+
+    .button-scan-bar {
+      margin: 0px;
+      width: 60px;
+      padding: 5px;
+      height: 60px;
+      border-radius: 40px;
+      text-align: right;
+      font-weight: bold;
+      color: color($colors, f-white);
+      ion-icon {
+        font-size: $xs;
+      }
+    }
+
+    .barcode-input {
+      display: inline-block;
+      width: calc(100% - 30px) !important;
+    }
+
+    .align-right {
+      text-align: right;
+    }
+
+    .item-input {
+      min-height: 2em;
+      background-color: transparent;
+
+      ion-input {
+        border: none;
+        margin: 0;
+        input {
+          border: none;
+          margin: 0;
+          margin-left: 8px;
+          line-height: 2em;
+        }
+      }
+    }
+    .type-input-option {
+      padding: 5px 20px;
+
+      font-size: $xs;
+      border-radius: 40px;
+
+      ::placeholder {
+        color: color($colors, cerulean);
+      }
+      ::-webkit-input-placeholder {
+        white-space: nowrap;
+      }
+
+      svg-icon {
+        width: $m;
+        margin: 5px 0px;
+        fill: color($colors, cerulean) !important;
+      }
+    }
+  }
+  .text-input-brandMainName {
+    border: #dddddd solid 1px !important;
+    padding: 5px 10px !important;
+    margin-top: 2px !important;
+    width: 100% !important;
+    font-size: 15px !important;
+    height: 2.5em !important;
+  }
+}

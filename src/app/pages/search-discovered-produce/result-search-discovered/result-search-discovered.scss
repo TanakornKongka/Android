@@ -1,0 +1,150 @@
+page-result-search-discovered {
+    ion-header {
+        border-bottom: #EEF0F5 2px solid;
+        ion-icon.back-button-icon.icon {
+            padding: 0px !important;
+            margin: 0px !important;
+            text-align: left !important;
+            color: color($colors, f-white)!important;
+        }
+
+        .toolbar-title {
+            color: color($colors, f-white) !important;
+        }
+        .title-page {
+            font-size: $m;
+            font-weight: bolder !important;
+            color: color($colors, f-white)!important;
+        }
+        .amount-list {
+            font-size: $m;
+            font-weight: bolder !important; // color: color($colors, f-pink);
+        }
+        .toolbar {
+            border-bottom: 0px !important;
+        }
+        .small-text {
+            padding: 10px;
+            font-size: $xxs;
+            ion-checkbox {
+                .checkbox-icon {
+                    border-color: color($colors, ink); // background-color: color($colors,shamrock);
+                    background-color: transparent;
+                }
+                .checkbox-checked {
+                    background-color: color($colors, ink);
+                    .checkbox-inner {
+                        border-color: color($colors, f-white);
+                    }
+                }
+            }
+           
+        }
+        .toolbar-background {
+            background-color: transparent !important;
+        }
+        .bar-button {
+            padding: 16px;
+            color: color($colors, f-white) !important;
+        }
+        .right-text {
+            padding: 10px;
+            text-align: right !important;
+            color: color($colors, new-red) !important; 
+            ion-icon{
+                font-size: $l;
+            }
+        }
+    }
+    ion-content {
+        .bot-margin {
+            margin-bottom: 40px !important;
+        }
+        ion-grid {
+            border-bottom: color($colors, cloud) solid 1px;
+            padding: 15px !important;
+        }
+        .text-to-right {
+            text-align: right !important;
+            ion-input {
+                font-size: $s !important;
+                .text-input {
+                    text-align: right !important;
+                    border-bottom: color($colors, shamrock) solid 2px;
+                }
+            }
+            p {
+                font-size: $xxxs;
+                color: color($colors, f-lightgray);
+            }
+        }
+        h3 {
+            font-size: $s;
+        }
+        p {
+            font-size: $xxs;
+        }
+        .bold-text {
+            font-weight: bold !important;
+        }
+        .red-icon {
+            color: color($colors, new-red);
+        }
+        .check-box {
+            padding: 15px;
+            ion-checkbox {
+                .checkbox-icon {
+                    border-color: color($colors, shamrock); // background-color: color($colors,shamrock);
+                }
+                .checkbox-checked {
+                    background-color: color($colors, shamrock);
+                    .checkbox-inner {
+                        border-color: color($colors, f-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.srp-delete-alert {
+    .alert-wrapper {
+        border-radius: 5px;
+        * {
+            font-size: $s;
+        }
+        .alert-head {
+            color: color($colors, new-red);
+            .alert-title {
+                text-align: left;
+                font-weight: bolder;
+            }
+        }
+        .alert-message {
+            text-align: center;
+            color: color($colors, ink);
+            margin: 20px;
+            padding: 20px;
+        }
+    }
+    .alert-button-group{
+        padding: 20px; 
+        .alert-button {
+        border-top: 0px;
+        height: 50%;
+        .alert-button:first-child {
+            color: color($colors, srp-gray) !important;
+            border-right:color($colors, cloud) solid 2px;  
+        }
+        .alert-button:last-child {
+            color: color($colors, new-red) !important;
+            border-right:0px !important;  
+        .button-inner {
+            width: 100%;
+            height: 50%;
+        }
+    }
+}
+  
+  }
+}

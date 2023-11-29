@@ -1,0 +1,245 @@
+{
+    "findareacode": [
+        {
+            "name": "zoneCode",
+            "value": ""
+        },
+        {
+            "name": "areaCode",
+            "value": ""
+        },
+        {
+            "name": "areaBranchCode",
+            "value": ""
+        },
+        {
+            "name": "storeTypeCode",
+            "value": ""
+        },
+        {
+            "name": "storeGroup",
+            "value": ""
+        },
+        {
+            "name": "groupId",
+            "value": ""
+        },
+        {
+            "name": "catId",
+            "value": ""
+        },
+        {
+            "name": "surveyNo",
+            "value": "1"
+        },
+        {
+            "name": "yearSurvey",
+            "value": "2561"
+        }
+    ],
+    "sent": [
+        {
+            "name": "recType",
+            "value": ""
+        },
+        {
+            "name": "oldReceiptDate",
+            "value": ""
+        },
+        {
+            "name": "kprReceiptDate",
+            "value": ""
+        },
+        {
+            "name": "sstReceiptDate",
+            "value": ""
+        },
+        {
+            "name": "sssReceiptDate",
+            "value": ""
+        },
+        {
+            "name": "oldReceiptNo",
+            "value": ""
+        },
+        {
+            "name": "kprReceiptNo",
+            "value": ""
+        },
+        {
+            "name": "sstReceiptNo",
+            "value": ""
+        },
+        {
+            "name": "sssReceiptNo",
+            "value": ""
+        },
+        {
+            "name": "mainReceiptDate",
+            "value": ""
+        },
+        {
+            "name": "mainReceiptNo",
+            "value": ""
+        },
+        {
+            "name": "anactlNo",
+            "value": ""
+        },
+        {
+            "name": "mode",
+            "value": ""
+        },
+        {
+            "name": "customerType",
+            "value": "0"
+        },
+        {
+            "name": "incctlNo",
+            "value": ""
+        },
+        {
+            "name": "fidDiv_h",
+            "value": ""
+        },
+        {
+            "name": "fld1",
+            "value": "990000"
+        },
+        {
+            "name": "fld2",
+            "value": "999900"
+        },
+        {
+            "name": "fld3",
+            "value": "999999"
+        },
+        {
+            "name": "offType",
+            "value": "1"
+        },
+        {
+            "name": "newRegId",
+            "value": ""
+        },
+        {
+            "name": "s1fld2_1",
+            "value": ""
+        },
+        {
+            "name": "s1fld4",
+            "value": ""
+        },
+        {
+            "name": "s1fld6",
+            "value": ""
+        },
+        {
+            "name": "s1fld7",
+            "value": ""
+        },
+        {
+            "name": "s1fld8",
+            "value": ""
+        },
+        {
+            "name": "s1fld9",
+            "value": "0"
+        },
+        {
+            "name": "s1fld10",
+            "value": "0"
+        },
+        {
+            "name": "taxType",
+            "value": "1"
+        },
+        {
+            "name": "productType",
+            "value": "0"
+        }
+    ],
+    "fld1": [
+        {
+            "key": "990000",
+            "value": "ทั้งหมด"
+        },
+        {
+            "key": "010000",
+            "value": "สำนักงานสรรพสานมิตภาคที่1"
+        },
+        {
+            "key": "020000",
+            "value": "สำนักงานสรรพสานมิตภาคที่2"
+        },
+        {
+            "key": "030000",
+            "value": "สำนักงานสรรพสานมิตภาคที่3"
+        },
+        {
+            "key": "040000",
+            "value": "สำนักงานสรรพสานมิตภาคที่4"
+        },
+        {
+            "key": "050000",
+            "value": "สำนักงานสรรพสานมิตภาคที่5"
+        },
+        {
+            "key": "060000",
+            "value": "สำนักงานสรรพสานมิตภาคที่6"
+        },
+        {
+            "key": "070000",
+            "value": "สำนักงานสรรพสานมิตภาคที่7"
+        },
+        {
+            "key": "080000",
+            "value": "สำนักงานสรรพสานมิตภาคที่8"
+        },
+        {
+            "key": "090000",
+            "value": "สำนักงานสรรพสานมิตภาคที่9"
+        },
+        {
+            "key": "100000",
+            "value": "สำนักงานสรรพสานมิตภาคที่10"
+        },
+        {
+            "key": "000300",
+            "value": "สำนักบริหารคลังและรายได้"
+        }
+    ],
+    
+    "s1fld9": [
+        {
+            "key": "0",
+            "value": "ไม่ระบุสถานะ"
+        },
+        {
+            "key": "1",
+            "value": "รายการที่ยังไม่ได้บันทึกสินค้า"
+        },
+        {
+            "key": "2",
+            "value": "รายการที่บันทึกสินค้าไม่ครบ"
+        },
+        {
+            "key": "3",
+            "value": "รายการที่บันทึกสินค้าครบแล้ว"
+        }
+    ],
+    "s1fld10": [
+        {
+            "key": "0",
+            "value": "ไม่ระบุ"
+        },
+        {
+            "key": "1",
+            "value": "ผ่านเคาน์เตอร์,ผ่านธนาคาร"
+        },
+        {
+            "key": "2",
+            "value": "ผ่านอินเตอร์เน็ต"
+        }
+    ]
+}

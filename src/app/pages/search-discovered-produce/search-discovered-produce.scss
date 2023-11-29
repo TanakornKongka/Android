@@ -1,0 +1,67 @@
+page-search-discovered-produce {
+   
+    ion-header {
+        .toolbar-title{
+            color: color($colors, f-dark);
+        }
+
+        .back-home {
+            width: $m;
+            margin-right: 10px;
+            fill: color($colors, f-dark) !important;
+        }
+       
+        .title-page{
+            font-size: $m;
+            white-space: nowrap;
+            padding-right: 10px;
+            font-weight: bolder !important;
+            color: color($colors, f-dark);
+        } 
+        
+        
+        .menuToggle,
+        ion-title {
+            color: color($colors, f-dark);
+            font-weight: bold !important;
+        }
+        button {
+            color: color($colors, f-white) !important;
+        }
+        
+        ion-segment {
+            
+            ion-segment-button {
+                font-size: $xxs !important;
+                font-weight: bold !important;
+                text-transform: none !important;
+                color: color($colors, f-white) !important;
+            }
+            .segment-activated {
+                color: color($colors, f-dark) !important;
+                background: color($colors, f-white) !important;
+                border-bottom: none !important;
+            }
+        }
+    }
+    
+    .title-foot{
+        color: color($colors, f-pink);
+    }
+    .pink-back{
+         background: color($colors, f-pink2);
+    }
+    .text-input-productName {
+        border: #dddddd solid 1px !important;
+        padding: 5px 10px !important;
+        margin-top: 2px !important;
+        width: 100% !important;
+        font-size: 15px !important;
+        height: 2.5em !important;
+      }
+  
+}  
+
+
+
+   

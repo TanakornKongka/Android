@@ -1,0 +1,11 @@
+ion-segment{
+    ion-segment-button{
+        color: color($colors, f-gray)!important;
+    }
+
+    .segment-activated{
+        color: color($colors, f-dark)!important;
+        border-color: color($colors, alpha-blue)!important;
+    }
+
+}

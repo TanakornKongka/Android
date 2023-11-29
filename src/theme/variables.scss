@@ -1,0 +1,133 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+$colors: (
+  primary: #ffffff,
+
+  f-pink : #E93C83,
+  f-pink2 : #fbdbec,
+  f-red : #FC4D61,
+  f-lightgreen : #81D184,
+  f-green : #21BE28,
+  f-white : #FFFFFF,
+  f-light1 : #F7F8F9,
+  f-light2 : #EEF0F5,
+  cloud : #DDDDDD,
+  f-lightgray : #999999,
+  f-bluegray : #BBC1CE,
+  f-gray : #95989A,
+  f-dark : #333333,
+  f-navbar-line : #414141,
+  f-navbar-back : #4B4B4B,
+  f-line : #DDD,
+  f-blue : #1565C0,
+  alpha-blue: #4881fe,
+  alpha-light-blue: #dee7ff,
+  alpha-yellow: #F7CA18,
+  new-red:         #E21C59,
+
+  //Main color
+  r-daisy: #FAFAFA,
+  r-cloud: #DDDDDD,
+  r-gray: #999999,
+  r-ink: #333333,
+  r-rad: #E21C59,
+  
+  //Tab1
+  r-arctic: #DFF3FD,
+  r-sky: #90ECF2,
+  r-blue: #2DB1F3,
+  r-cerulean: #1B93D0,
+  
+  //Tab2
+  r-peach: #FDEAE5,
+  r-coral: #FBCF99,
+  r-orange: #FC9574,
+  r-fire: #F2764F,
+  
+  //Tab3
+  r-lime: #DEF6D6,
+  r-chartreuse: #C8F0BB,
+  r-green: #5ECD80,
+  r-shamrock: #22A572,
+  
+  //Tab4
+  r-periwinkle: #E3EFFF,
+  r-indigo: #B9D4FB,
+  r-purple: #AA99F4,
+  r-violet: #6273BC,
+  
+  //Tab5
+  r-flamingo: #FDE6F0,
+  r-bubblegum: #EF9FF3,
+  r-hotpink: #F55D9F,
+
+  daisy : #FAFAFA,
+  srp-gray : #999999,
+  ink: #333333,
+  arctic: #DFF3FD,
+  sky : #90ECF2,
+  srp-blue: #2DB1F3,
+  cerulean: #1B93D0,
+  peach: #FDEAE5,
+  srp-coral: #FBCF99,
+  srp-orange: #FC9574,
+  fire: #F2764F,
+  srp-lime: #DEF6D6,
+  srp-chartreuse: #C8F0BB,
+  srp-green: #5ECD80,
+  shamrock: #22A572,
+  periwinkle: #E3EFFF,
+  srp-indigo: #B9D4FB,
+  srp-purple: #AA99F4,
+  srp-violet: #6273BC,
+  flamingo: #FDE6F0,
+  bubblegum: #EF9FF3,
+  srp-hotpink: #F55D9F,
+
+
+
+);
+$picker-ios-button-text-color: color($colors, f-dark);
+$alert-ios-radio-label-text-color-checked: color($colors, f-dark);
+$alert-ios-button-text-color: color($colors, f-dark);
+$popover-ios-width: 150px;
+$popover-ios-left: 214px;
+$border-radius : 10px;
+$model-padding : 16px;
+$ionicons-font-path: "../assets/fonts";
+$radio-ios-color-on: color($colors, f-green);
+$radio-md-color-on: color($colors, f-green);
+
+$xxxs:10px;
+$xxs:12px;
+$xs:14px;
+$s:16px;
+
+$m:18px;
+
+$xxxl:40px;
+$xxl:30px;
+$xl:25px;
+$l:20px;
+
+@import "ionic.theme.default";
+@import "ionicons";
+// @font-face {
+//     font-family: "scg";
+//     src: url("../assets/fonts/SCG_TTF/SCG-Reg.ttf") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "scg";
+//   src: url("../assets/fonts/SCG_TTF/SCG-Bol.ttf");
+//   font-weight: bold;
+// }
+
+// @font-face {
+//   font-family: "scg";
+//   src: url("../assets/fonts/SCG_TTF/SCG-Italic.ttf");
+//   font-style: italic;
+// }

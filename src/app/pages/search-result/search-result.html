@@ -1,0 +1,47 @@
+<ion-content padding>
+  <ion-row class="header">
+    <ion-col>
+      <b> ผลการค้นหา</b>
+    </ion-col>
+    <ion-col class="right">
+      จำนวน {{recordNumber}} รายการ
+    </ion-col>
+  </ion-row>
+  <ion-row class="border-2"></ion-row>
+  <div class="custom-table">
+    <table width="100%">
+      <tr>
+        <th width="60%">รายละเอียดสินค้า</th>
+        <th width="30%">ราคาขายปลีก</th>
+        <th width="10%">บันทึก</th>
+      </tr>
+      <tr *ngFor="let item of rows | paginate: {itemsPerPage: perPage, currentPage: page,totalItems: totalPage}">
+        <td class="td-table">{{item.productName}}</td>
+        <td class="center">
+          <ion-input text-right (keypress)="numberOnly($event)" value="{{item.surveyPrice}}" (ionChange)="changeValue($event,item)"
+            disabled="{{item.disable}}">
+          </ion-input>
+        </td>
+        <td class="center">
+          <img *ngIf="item.disable" src="assets/images/icon/save-solid-1.png" width="25">
+          <img *ngIf="!item.disable " src="assets/images/icon/save-solid.png" width="25" (tap)="insert(item)">
+        </td>
+        <!-- <td *ngIf="item.surveyPrice != ''" class="center">
+          <img src="assets/images/icon/save-solid.png" width="25" (tap)="insert(item)">
+        </td> -->
+      </tr>
+      <tr style="border-top: 1px; border-color: white;">
+        <td colspan="3">
+          <ion-row class="border-2"></ion-row>
+          <pagination-controls text-center (pageChange)="pageChanged($event)" maxSize="5" previousLabel="ก่อนหน้า"
+            nextLabel="ถัดไป"></pagination-controls>
+        </td>
+      </tr>
+    </table>
+  </div>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom" text-center style="height: 100%;">
+    <button ion-button (tap)="dismiss()" class="bg-fire" style="color:white">ยกเลิก</button>
+  </ion-toolbar>
+</ion-footer>

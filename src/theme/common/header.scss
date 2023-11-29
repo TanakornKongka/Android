@@ -1,0 +1,104 @@
+@mixin header-styles($background, $color) {
+    .toolbar{
+        height: 50px;
+        border-bottom: color($colors, f-light2) 2px solid;
+    }
+    .toolbar-background {
+        border: none !important;
+        background-color: $background;
+    }
+    .toolbar-title,
+    .back-button,
+    .bar-button {
+        color: $color;
+    }
+}
+
+ion-header {
+    @include header-styles(color($colors, f-white), color($colors, f-dark)); // height: 44px;
+    margin-bottom: 2px; // border-bottom: color($colors, f-border) 2px solid;
+    ion-title {
+        font-size: medium;
+        text-transform: capitalize;
+        width: 100%;
+        * {
+            // align-self: flex-end;
+            font-weight: initial;
+        }
+    }
+    ion-title[center] {
+        * {
+            text-align: center;
+            font-weight: initial;
+        }
+    }
+    ion-title[left] {
+        padding-left: 44px !important;
+        padding-right: 20px !important;
+        * {
+            font-weight: bold !important;
+            font-size:$m;
+            text-align: left;
+            font-weight: initial;
+        }
+    }
+    .toolbar-title {
+        color: color($colors, f-dark);
+    }
+    .left-header-btn {
+        
+        ion-icon{
+            color: color($colors, f-dark);
+            font-weight: bold !important;
+            font-size:20px;
+        }
+        
+    }
+    .right-header-btn {
+        color: color($colors, f-white);
+        font-size: 9px;
+        font-weight: bold !important;
+        border-radius: 2px;
+        height: 25px;
+        background: color($colors, f-pink);
+        padding: 10px !important;
+        svg-icon{
+            width: 9px;
+            height: 9px; 
+            margin-right: 5px;
+            fill: color($colors, f-white);
+        }
+    }
+    
+    .svg-icon {
+        width: 22px;
+        height: 22px;
+       
+        fill: color($colors, f-white);
+    }
+    ion-icon #noti-bell {
+        position: relative;
+        ion-badge {
+            font-family: "scg";
+            position: absolute;
+            padding: 2px 4px 2px 4px;
+            min-width: 19px;
+            line-height: 13px;
+            top: -3px;
+            right: -3px;
+            font-size: x-small;
+            background-color: color($colors, f-green);
+            border-radius: 10px;
+            border: color($colors, f-white) 1px solid;
+        }
+    }
+    ion-icon.back-button-icon.icon {
+        color: color($colors, f-dark);
+    }
+}
+
+image-viewer {
+    ion-header {
+        border-bottom: none;
+    }
+}

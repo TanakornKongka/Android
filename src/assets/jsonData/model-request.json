@@ -1,0 +1,68 @@
+{
+    "request": [{
+        "model": [
+            {
+                "status": true,
+                "avatarUrl": "assets/images/model/model1-1.png",
+                "name": "Mild Barinron",
+                "price": 90000
+            },
+            {
+                "status": true,
+                "avatarUrl": "assets/images/model/user2.jpg",
+                "name": "Mild MeeTung",
+                "price": 90000
+            },
+            {
+                "status": true,
+                "avatarUrl": "assets/images/model/model2-1.png",
+                "name": "Ralionron Mild ",
+                "price": 120000
+            }
+        ],
+        "tags": [
+            "Fashion Model",
+            "Companion"
+        ],
+        "time": [
+            "9-11 May 2008 / 09:00-11:30 AM",
+            "15 May 2008 / 05:00-7:30 AM"
+        ],
+        "info": "Female mopdels for simple editorial portriats in Chiang Mai, Thailand",
+        "price":300000
+}],
+    "success":[ {
+        "past": "Last Month",
+        "model": [
+            {
+                "status": true,
+                "avatarUrl": "assets/images/model/model1-1.png",
+                "name": "Mild Barinron",
+                "price": 90000
+            },
+            {
+                "status": true,
+                "avatarUrl": "assets/images/model/user2.jpg",
+                "name": "Mild MeeTung",
+                "price": 90000
+            },
+            {
+                "status": true,
+                "avatarUrl": "assets/images/model/model2-1.png",
+                "name": "Ralionron Mild ",
+                "price": 120000
+            }
+        ],
+        "tags": [
+            "Fashion Model",
+            "Companion"
+        ],
+        "time": [
+            "9-11 May 2008 / 09:00-11:30 AM",
+            "15 May 2008 / 05:00-7:30 AM"
+        ],
+        "info": "Female mopdels for simple editorial portriats in Chiang Mai, Thailand",
+        "price":300000
+
+    }]
+}

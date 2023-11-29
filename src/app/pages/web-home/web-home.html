@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar hideBackButton padding>
+
+    <ion-buttons start left>
+      <button ion-button icon-start ion-button icon-only>
+        <span class="title-page">SRP Survey</span>
+      </button>
+    </ion-buttons>
+<!--     <div style="text-align: right;">
+        <span style="font-size: 20px;font-weight: bolder;color: red;" stacked>ระบบทดสอบ</span>
+      </div> -->
+
+  </ion-navbar>
+
+
+  <ion-row class="user-name">
+    <ion-col class="name-text" col-6>
+      <p no-margin>{{user.company}}</p>
+      <ion-icon name="md-person"></ion-icon>
+      <span>{{user.name}}</span>
+    </ion-col>
+
+    <ion-col col-6>
+      <button class="log-out" float-right ion-button icon-start (tap)="logout()">
+        <ion-icon name="md-power"></ion-icon>
+        ออกจากระบบ
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="content menus-container">
+    <ion-col class="row-menu">
+      <ion-row padding class="menu-item top-round pd-15" [style.background]="util.updateThemeColor(1).gradient" (tap) = "openSearchProduce()">
+        
+        <ion-row class="title">
+          ค้นหา
+          <div class="cover">
+          ราคาขายปลีกแนะนำสำหรับการเปรียบเทียบปรับคดี
+          </div>
+        </ion-row>
+          
+      </ion-row>
+      <ion-row padding class="menu-item" [style.background]="util.updateThemeColor(2).gradient" (tap) = "openSearchSurveyProduch()">
+        <div class="cover set-center">
+          สำรวจราคาขายปลีก
+        </div>
+      </ion-row>
+    
+      <ion-row padding class="menu-item bottom-round" [style.background]="util.updateThemeColor(3).gradient" (tap) = "openSearchDiscovered()">
+        <ion-row class="title" >
+          ค้นหา
+          <div class="cover">
+            สินค้าที่สำรวจแล้ว
+          </div>
+      </ion-row>
+    </ion-row>
+      
+    
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="app-version">
+    Version {{appVersion}}
+  </ion-row>
+        
+</ion-content>
+

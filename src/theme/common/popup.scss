@@ -1,0 +1,114 @@
+
+
+
+
+.f-custom-popup {
+    font-family: "scg";
+    .alert-wrapper {
+        border-radius: 5px;
+        * {
+            font-size: medium;
+        }
+        .alert-head {
+            color: color($colors, f-dark);
+            .alert-title {
+                font-weight: bolder;
+            }
+        }
+        .alert-message {
+            color: color($colors, f-dark);
+            padding-bottom: 0;
+        }
+    }
+    .alert-button {
+        border: none;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+    .alert-button:last-child {
+        color: color($colors, f-red);
+    }
+}
+
+.f-custom-popup-alert {
+    * {
+        text-align: center;
+    }
+    .alert-button:last-child {
+        width: 100%;
+        color: color($colors, f-dark);
+    }
+    .code-text {
+        margin-bottom: 0px;
+        vertical-align: bottom;
+        right: 10px;
+        color: color($colors, f-dark);
+    }
+}
+
+.f-custom-popup-alert-content {
+    .alert-button {
+        color: color($colors, f-dark) !important;
+    }
+    .alert-head {
+        border-bottom: color($colors, f-lightgray) 0.55px solid;
+    }
+    .alert-message {
+        padding: 0;
+        .btn-custom {
+            width: 100%;
+            text-align: left;
+            background-color: color($colors, f-white);
+            border-bottom: color($colors, f-lightgray) 0.55px solid;
+            padding: 8px 22px 8px 22px;
+            .full-btn {
+                .content-btn {
+                    width: 80%;
+                    p {
+                        margin: 0;
+                    }
+                    .tag {
+                        font-size: medium;
+                    }
+                    .content {
+                        font-size: medium;
+                        font-weight: bolder;
+                    }
+                }
+                .icon-custom {
+                    position: absolute;
+                    margin-top: -25px;
+                    right: 22px;
+                    color: color($colors, f-red);
+                    height: 100%;
+                    text-align: right;
+                    font-size: x-small;
+                    p {
+                        margin: 0;
+                    }
+                    .svg-icon {
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.f-custom-popup-confirmbutton {
+    .alert-button {
+        color: color($colors, f-dark);
+    }
+}
+
+.f-custom-popup-multibutton {
+    .alert-button {
+        color: color($colors, f-dark);
+    }
+}
+
+.select-alert {
+    .alert-button:first-child {
+        color: color($colors, f-dark);
+    }
+}

@@ -1,0 +1,111 @@
+<!--
+  Generated template for the SecondMenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>second-menu</ion-title>
+  </ion-navbar>
+
+          <p class="name-text" [style.background]="util.updateThemeColor(2).gradient" no-margin><span><ion-icon name="md-person"></ion-icon></span>บันทึกสำรวจ</p>
+ 
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div class="center-text-align">
+
+
+    <h3 no-margin >ร้าน Body Shop</h3>
+    <p  no-margin> จังหวัด : กรุงเทพมหานคร   อำเภอ : คลองสาน </p>
+
+
+  </div>
+    
+
+  <form class="form-text">
+
+    <ion-row *ngIf="isOpen" class="row-bottom">
+      <ion-col col-9>
+        <ion-row class="type-input-option" [style.color]="util.updateThemeColor(2).dark" [style.background]="util.updateThemeColor(2).light">
+          <ion-col col-10>
+            <ion-input no-text-wrap placeholder="เลขที่ใบอนุญาต/เลขทะเบียน..." type="number" value="{{barcode}}"></ion-input>
+          </ion-col>
+          <ion-col col-2>
+            <span>
+              <svg-icon src="assets/images/icon/search.svg"></svg-icon>
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-2>
+        <button class="button-scan-bar" [style.background]="util.updateThemeColor(2).primary" ion-button icon-only (tap)="scanBarcode()">
+          <ion-icon name="md-barcode"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-label class="title-text-center">
+      <span class="red-star">**</span>
+      หมายเหตุ สินค้าที่ไม่ได้ขึ้นทะเบียน Barcode หมายถึง สินค้าที่ไม่มี Barcode บนภาชนะ</ion-label>
+
+    <button 
+    class="button-text" 
+    ion-button full 
+    [style.background]="util.updateThemeColor(2).primary"
+    (click)="openUnregistBarcode()">{{titleButton}}</button>
+
+    <ion-list *ngIf="!isOpen" class="list-search-type"  no-margin>
+
+      <ion-item>
+        <ion-label class="title-text" stacked>กลุ่มสินค้า
+          <span class="red-star">*</span>
+        </ion-label>
+        <ion-select class="type-selest-option">
+          <ion-option></ion-option>
+        </ion-select>
+
+      </ion-item>
+      <ion-item>
+        <ion-label class="title-text" stacked>กลุ่มประเภทสินค้า(เฉพาะเบียร์,เบียร์(Brewpub),น้ำอัดลม
+          <span class="red-star">*</span>
+        </ion-label>
+        <ion-select class="type-selest-option">
+          <ion-option></ion-option>
+        </ion-select>
+
+      </ion-item>
+      <ion-item>
+        <ion-label class="title-text" stacked>ยี่ห้อลัก
+          <span class="red-star" *ngIf="i == 0 || i == 1 ">*</span>
+        </ion-label>
+        <ion-select class="type-selest-option">
+          <ion-option></ion-option>
+        </ion-select>
+
+      </ion-item>
+      <ion-item>
+        <ion-label class="title-text" stacked>แบบ/รุ่น/ขนาดบรรจุ/ดีกรี/หน่วย/หน่วยนับ
+          <span class="red-star" *ngIf="i == 0 || i == 1 ">*</span>
+        </ion-label>
+        <ion-select class="type-selest-option">
+          <ion-option></ion-option>
+        </ion-select>
+
+      </ion-item>
+      <ion-item>
+        <ion-label class="title-text" stacked>ระบุราคาขายปลีก
+          <span class="red-star" *ngIf="i == 0 || i == 1 ">*</span>
+        </ion-label>
+        <ion-input no-margin class="type-selest-option" type="text"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+</ion-content>

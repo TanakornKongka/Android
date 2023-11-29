@@ -1,0 +1,137 @@
+page-search-service-produce {
+    ion-header {
+        
+        .menuToggle,
+        ion-title {
+            color: color($colors, f-dark);
+            font-weight: bold !important;
+        }
+        .title-page {
+            font-size: 20px;
+            font-weight: bolder !important;
+            color: color($colors, f-dark);
+        }
+        
+        button {
+            color: color($colors, f-white) !important;
+        } 
+        
+        .back-home {
+            padding-right: 20px !important;
+            font-size: 20px;
+            font-weight: bold; // background: color($colors, f-blue) !important;
+            color: color($colors, f-dark) !important;
+        }
+        ion-segment {
+            ion-segment-button {
+                font-size: 12px !important;
+                font-weight: bolder !important;
+                text-transform: none !important;
+                color: color($colors, f-white) !important;
+                background: color($colors, f-pink) !important;
+            }
+            .segment-activated {
+                color: color($colors, f-dark) !important;
+                background: color($colors, f-white) !important;
+                border-bottom: none !important;
+            }
+        }
+    }
+    ion-content {
+        form {
+            padding-bottom: 50px;
+            .title-radio-text {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .title-radio-center {
+                font-size: 16px;
+                margin: 0px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .radio-size {
+                margin: 0px !important;
+            }
+            .item-radio-checked.item-ios ion-label {
+                color: color($colors, f-dark);
+            }
+            .radio-md .radio-checked {
+                border-color: blue;
+                .radio-inner {
+                    background-color: blue;
+                }
+            } 
+
+            
+            .type-input-option-gray {
+                font-size: 16px;
+                padding: 16px;
+                border-radius: 3px;
+                color: #000000 !important;
+                border: color($colors, f-lightgray) solid 1px;
+                background: color($colors, f-light1);
+            }
+        }
+        .row-bottom {
+            padding: 20px 5px;
+            background: transparent;
+            padding-bottom: 0px !important;
+            .right-button {
+                text-align: right;
+                font-size: 12px;
+                font-weight: bold;
+                color: color($colors, f-white);
+                background: #DBA901;
+            }
+            .left-button {
+                color: color($colors, f-dark);
+                background: color($colors, f-gray);
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+    }
+    .row-table {
+        padding: 20px 5px;
+        padding-bottom: 0px !important;
+        p {
+            margin: 0px;
+        }
+        .col-green {
+            background: color($colors, f-green);
+            border-right: color($colors, f-white) solid 1px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            height: 50%;
+            color: color($colors, f-white);
+        }
+        .col-gray-detail {
+            background: transparent;
+            text-align: left;
+            font-size: 10px;
+            white-space: pre-line;
+            border-right: color($colors, f-light2) solid 1px;
+            border-left: color($colors, f-light2) solid 1px;
+            display: inherit;
+            color: color($colors, f-dark);
+        }
+        .col-gray {
+            background: color($colors, f-light1);
+            text-align: center;
+            color: color($colors, f-dark);
+            border: color($colors, f-light2) 1px solid;
+        }
+        ion-icon {
+            color: color($colors, f-dark);
+            background: transparent !important;
+        }
+    }
+    .title-foot {
+        color: color($colors, f-pink);
+    }
+    .pink-back {
+        background: color($colors, f-pink2);
+    }
+}

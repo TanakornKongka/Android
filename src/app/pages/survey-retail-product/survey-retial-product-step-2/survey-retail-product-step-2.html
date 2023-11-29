@@ -1,0 +1,255 @@
+<!--
+  Generated template for the SearchProducePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title left>สำรวจราคาขายปลีก</ion-title>
+  </ion-navbar>
+
+  <ion-row class="bg-title">
+    <ion-col>
+      บันทึกการสำรวจ
+    </ion-col>
+  </ion-row>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-row class="function-group">
+    <ion-col col-3>
+      <button (tap)="showLicenceNumberInput = true"><ion-icon name="md-qr-scanner"></ion-icon><br/>QR</button>
+    </ion-col>
+    <ion-col col-3>
+      <button (tap)="chooseImage()"><ion-icon name="md-camera"></ion-icon><br/>ถ่ายรูป</button>
+    </ion-col>
+    <ion-col col-3>
+      <button (tap)="openMap()"><ion-icon name="md-pin"></ion-icon><br/>พิกัดร้านค้า</button>
+    </ion-col>
+    <ion-col col-3>
+      <button class="btn-store-image" [disabled]="storeImage == null" (tap)="openStoreImage()"><ion-icon name="md-images"></ion-icon><br/>รูปร้านค้า</button>
+    </ion-col>
+  </ion-row>
+
+
+  <div class="form-search">
+    
+    <form [formGroup]="storeDetailsTypeForm"  class="no-licence-tab-container form-search tab-content-container" [hidden]="false">
+        <ion-list class="list-search-type" no-margin>
+
+          <ion-row class="search-licence-no" [hidden]="!showLicenceNumberInput">
+            <ion-col>
+              <ion-item class="licence-number-input">
+                <ion-input type="text" formControlName="storeLicenceNumber" class="type-input" placeholder="เลขที่ใบอนุญาต/เลขทะเบียนสรรพสามิต"></ion-input>
+                <button type="button" class="type-input" (tap)="searchByLicanceNO()" item-right><svg-icon src="assets/images/icon/search.svg"></svg-icon></button>
+              </ion-item>
+            </ion-col>
+            <ion-col col-2 class="center-content">
+                <button type="button" (tap)="scanBarcode()" class="btn-scan-qr" item-right><svg-icon src="assets/images/icon/qr-code.svg" ></svg-icon></button>
+            </ion-col>
+          </ion-row>
+    
+         
+          <ion-item >
+            <ion-label class="title-text" stacked>จังหวัด <span class="red-color">*</span></ion-label>
+            <select-searchable *ngIf="isCanSelectProvince" class="type-selest-option" item-content formControlName="storeProvince" placeholder="กรุณาเลือกจังหวัด" 
+            (onChange)="getNolicencProvinceData($event.value)"  [items]="provinceList" [canSearch]="true" itemValueField="key" itemTextField="value" [shouldStoreItemValue]="true">
+            </select-searchable>
+            
+            <!-- <ion-select interface="alert" class="type-selest-option" *ngIf="!isCanSelectProvince" disabled="{{disableInputProvince || disableInput}}" formControlName="storeProvince2" >
+              <ion-option *ngFor="let item of provinceListSelect" value="{{item.key.split('|')[1]}}">{{item.value}}</ion-option>
+            </ion-select> -->
+            <ion-select interface="alert" class="type-selest-option" *ngIf="isCanSelectProvince==false" disabled="{{disableInputProvince || disableInput}}" formControlName="storeProvince" >
+              <ion-option *ngFor="let item of provinceListSelect" value="{{item.key}}">{{item.value}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-row class="search-store-name" >
+            <ion-col>
+                <ion-label class="title-text" stacked>ชื่อร้านค้า + ชื่อสาขา <span class="red-color">(ถ้ามี)*</span></ion-label>
+              <ion-item class="licence-number-input"> 
+                <ion-input type="text" [(ngModel)]="storeName"  formControlName="storeName" class="type-input" disabled="{{disableInput}}" (ionChange)="getStoreNameSuggestion($event,1)" (ionBlur)="blurInput($event)"></ion-input>
+                <button type="button" *ngIf="isStoreNameLoading" class="type-input" item-right ><ion-spinner></ion-spinner></button>
+               
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <div class="suggestion-container">
+            <ion-list *ngIf="showStoreNameSuggestion">
+              <ion-item *ngFor="let item of storeInProvince" (tap)="chooseStore(item)">
+                {{ item.storeName }}
+              </ion-item>
+            </ion-list>
+          </div>
+
+          <ion-item>
+            <ion-label class="title-text" stacked>เลขที่ประจำตัวผู้เสียภาษี <span class="red-color">(ถ้ามี)</span></ion-label>
+            <ion-input disabled="{{disableInput}}"  type="text" formControlName="citizenID"></ion-input>
+          </ion-item>
+
+          <button ion-button (tap)="openPartCode()" class="btn-toggle-hide">
+            <ion-icon  name="{{partCode}}"></ion-icon> รายละเอียดร้านค้าเพิ่มเติม
+          </button>
+
+          <ion-item [hidden]="isPartCodeHidden">
+            <ion-label class="title-text" stacked>รหัสสาขา</ion-label>
+            <ion-input disabled="{{disableInput}}"  type="text" formControlName="storeBranchNo"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="title-text" stacked>ประเภทสถานที่ขายสินค้า <span class="red-color">*</span></ion-label>
+            <select-searchable class="type-selest-option" item-content formControlName="storeLocationType" placeholder="กรุณาเลือกประเภทสถานที่ขาย" 
+            (onChange)="callServiceGetStoreSubType($event.value)" [items]="storeGroupList" [canSearch]="true" itemValueField="key" itemTextField="value" [shouldStoreItemValue]="true">
+            </select-searchable>
+            <!-- <ion-select class="type-selest-option" formControlName="storeLocationType" (ionChange)="callServiceGetStoreSubType($event)" placeholder="กรุณาเลือกประเภทสถานที่ขาย" >
+              <ion-option *ngFor="let item of storeGroupList" value="{{item.key}}">{{item.value}}</ion-option>
+            </ion-select> -->
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="title-text" stacked>กลุ่มร้านค้า <span class="red-color">*</span></ion-label>
+            <select-searchable class="type-selest-option" item-content formControlName="storeGroupType" placeholder="กรุณาเลือกกลุ่มร้านค้า" 
+             [items]="storeSubGroupList" [canSearch]="true" itemValueField="key" itemTextField="value" [shouldStoreItemValue]="true">
+            </select-searchable>
+            <!-- <ion-select class="type-selest-option" formControlName="storeGroupType" placeholder="กรุณาเลือกกลุ่มร้านค้า" >
+              <ion-option *ngFor="let item of storeSubGroupList" value="{{item.key}}">{{item.value}}</ion-option>
+              <ion-option *ngIf="storeSubGroupList.length == 0"  value="none" disabled>กรุณาเลือกประเภทสถานที่ขายสินค้า</ion-option>
+            </ion-select> -->
+          </ion-item>
+        </ion-list>
+      </form>
+
+      <form [formGroup]="addressTypeForm"  class="no-licence-tab-container form-search tab-content-container address-form">
+          
+          <button ion-button (tap)="openExpanasionFirst()" class="btn-toggle-hide">
+            <ion-icon  name="{{addFirst}}"></ion-icon> รายละเอียดอาคารเพิ่มเติม
+          </button>
+
+          <ion-list class="list-search-type" no-margin>
+    
+            <ion-item [hidden]="isHideFirst">
+              <ion-label class="title-text" stacked>ชื่ออาคาร</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="buildingName"></ion-input>
+            </ion-item>
+    
+            <ion-item [hidden]="isHideFirst">
+              <ion-label class="title-text" stacked>ห้องที่</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="roomNumber"></ion-input>
+            </ion-item>
+    
+            <ion-item [hidden]="isHideFirst">
+              <ion-label class="title-text" stacked>ชั้นที่</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="floor"></ion-input>
+            </ion-item>
+    
+            <ion-item [hidden]="isHideFirst">
+              <ion-label class="title-text" stacked>ชื่อหมู่บ้าน</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="villageName"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label class="title-text" stacked>เลขที่ <span class="red-color">*</span></ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="addressNumber"></ion-input>
+            </ion-item>
+
+           
+            <button ion-button (tap)="openExpanasionSecond()" class="btn-toggle-hide">
+              <ion-icon  name="{{addSecond}}"></ion-icon> รายละเอียดที่อยู่เพิ่มเติม
+            </button>
+    
+            <ion-item [hidden]="isHideSecond">
+              <ion-label class="title-text" stacked>หมู่ที่</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="number" formControlName="villageNumber"></ion-input>
+            </ion-item>
+    
+            <ion-item [hidden]="isHideSecond">
+              <ion-label class="title-text" stacked>ตรอก/ซอย</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="alley"></ion-input>
+            </ion-item>
+    
+            <ion-item [hidden]="isHideSecond">
+              <ion-label class="title-text" stacked>ถนน</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="road"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label class="title-text" stacked>อำเภอ/เขต <span class="red-color">*</span></ion-label>
+              <ion-select disabled="{{disableInput}}"  class="type-selest-option" formControlName="district" placeholder="กรุณาเลือกอำเภอ/เขต" (ionChange)="callServiceGetSubDistrict($event)" >
+                <ion-option *ngFor="let item of districtList" value="{{item.key.split('|')[1]}}">{{item.value}}</ion-option>
+                <ion-option *ngIf="districtList.length == 0"  value="none" disabled>กรุณาเลือกจังหวัด</ion-option>
+              </ion-select>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label class="title-text" stacked>ตำบล/แขวง</ion-label>
+              <ion-select disabled="{{disableInput}}" class="type-selest-option" formControlName="subDistrict" placeholder="กรุณาเลือกตำบล/แขวง"  (ionChange)="callServiceGetPostCode($event)">
+                <ion-option *ngFor="let item of subDistrictList" value="{{item.key.split('|')[1]}}">{{item.value}}</ion-option>
+                <ion-option *ngIf="subDistrictList.length == 0"  value="none" disabled>กรุณาเลือกอำเภอ</ion-option>
+              </ion-select>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label class="title-text" stacked>รหัสไปรษณีย์</ion-label>
+              <ion-input disabled="{{disableInput}}"  type="text" formControlName="postCode"></ion-input>
+            </ion-item>
+
+
+
+            <button ion-button (tap)="openContactDetail()" class="btn-toggle-hide">
+                <ion-icon  name="{{contactDetail}}"></ion-icon> รายละเอียดข้อมูลติดต่อเพิ่มเติม
+            </button>
+    
+            <ion-item [hidden]="iscontactDetail">
+              <ion-label class="title-text" stacked>โทรศัพท์</ion-label>
+              <ion-input disabled="{{disableInput}}" type="text" formControlName="phoneNumber"></ion-input>
+            </ion-item>
+    
+            <ion-item [hidden]="iscontactDetail">
+              <ion-label class="title-text" stacked>Fax</ion-label>
+              <ion-input disabled="{{disableInput}}" type="text" formControlName="faxNumber"></ion-input>
+            </ion-item>
+        
+            <ion-item [hidden]="iscontactDetail">
+              <ion-label class="title-text" stacked>Email</ion-label>
+              <ion-input disabled="{{disableInput}}" type="text" formControlName="email"></ion-input>
+            </ion-item>
+    
+          </ion-list>
+    
+          <div class="vat-regis">
+            <input #storeRegisVat id="vat-regis-true" type="radio" name="vat-regis" value="N"> จดทะเบียน VAT<br>
+            <input #storeNoRegisVat id="vat-regis-false" type="radio" name="vat-regis" value="Y"> ไม่จดทะเบียน VAT<br>
+          </div>
+    
+        </form>
+      
+  
+
+  </div>
+  
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-row class="page-navigation">
+    
+    <ion-col class="clear">
+      
+    </ion-col>
+
+    <ion-col class="next">
+      <button (tap)="nextPage()">
+        ถัดไป  <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+    </ion-col>
+
+  </ion-row>
+
+</ion-footer>

@@ -1,0 +1,153 @@
+page-search-by-highest-price {
+    ion-header {
+        .user-name {
+            background: color($colors, alpha-blue) !important;
+            .name-text {
+                font-size: 12px;
+                font-weight: bold;
+                color: color($colors, f-white);
+            }
+            .log-out {
+                font-size: 12px;
+                font-weight: bold;
+                background: color($colors, f-blue) !important;
+            }
+        }
+        .menuToggle,
+        ion-title {
+            color: color($colors, f-dark);
+            font-weight: bold !important;
+        }
+        .toolbar {
+            height: 55px;
+            background: transparent;
+        }
+        .toolbar-background {
+            background: color($colors, f-blue) !important;
+        }
+        img.logo {
+            width: 165px;
+            height: 100%;
+        }
+        button {
+            color: color($colors, f-white) !important;
+        }
+        .title-form {
+            color: color($colors, f-blue);
+            padding: 16px;
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        .back-home {
+            font-size: 12px;
+            font-weight: bold;
+            background: color($colors, f-blue) !important;
+            color: color($colors, f-white) !important;
+        }
+    }
+    ion-content {
+        ion-segment {
+            background: color($colors, f-gray) !important;
+            ion-segment-button {
+                font-size: medium !important;
+                font-weight: bolder !important;
+                text-transform: none !important;
+                color: color($colors, f-dark) !important;
+            }
+            .segment-activated {
+                color: color($colors, f-white) !important;
+                background: color($colors, f-blue) !important;
+            }
+        }
+        .form-search {
+            .red-star {
+                color: red;
+            }
+            border: color($colors, f-lightgray) solid 1px;
+            .list-search-type {
+                padding-bottom: 20px;
+                padding-right: 10px; //border-top: color($colors, f-lightgray) solid 1px;
+                border-bottom: color($colors, f-lightgray) solid 1px;
+                .item-select {
+                    border-radius: 0px;
+                }
+                .item-block:first-child {
+                    border-top: none;
+                }
+                .item-block:last-child {
+                    border-bottom: none;
+                }
+                background: color($colors, f-white);
+                .title-text {
+                    font-size: 16px;
+                    white-space: inherit;
+                    font-weight: bold;
+                }
+                .type-selest-option {
+                    font-size: 12px;
+                    padding: 5px 10px;
+                    border-radius: 0px;
+                    color: #000000 !important;
+                    border: color($colors, f-lightgray) solid 1px;
+                    .alert-ios [aria-checked=true] .alert-radio-label {
+                        color: #000000 !important;
+                    }
+                }
+                .item-inner {
+                    border-bottom: none !important;
+                    margin: none !important;
+                    padding: 0px !important;
+                }
+            }
+            .row-bottom {
+                padding: 20px 5px;
+                background: transparent;
+                padding-bottom: 0px !important;
+                .right-button {
+                    text-align: right;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: color($colors, f-white);
+                    background: #DBA901;
+                }
+                .left-button {
+                    color: color($colors, f-dark);
+                    background: color($colors, f-gray);
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .row-table {
+            padding: 20px 5px;
+            padding-bottom: 0px !important;
+            .col-green {
+                background: color($colors, f-green);
+                border-right: color($colors, f-white) solid 1px;
+                text-align: center;
+                font-weight: bold;
+                color: color($colors, f-white);
+            }
+            .col-gray-detail {
+                background: color($colors, f-light1);
+                text-align: left;
+                white-space: pre-line;
+                display: inherit;
+                color: color($colors, f-dark);
+            }
+            .paddinfLeft{
+                padding-left: 5px !important;
+            }
+            .col-gray {
+                background: color($colors, f-light1);
+                text-align: center;
+                color: color($colors, f-dark);
+                ion-icon {
+                    color: color($colors, f-dark);
+                    background: transparent !important;
+                }
+            }
+        }
+    }
+}

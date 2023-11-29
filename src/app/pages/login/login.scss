@@ -1,0 +1,81 @@
+page-login {
+        
+   .form-login{
+          
+        
+        .item-block:first-child {
+         border-top: none; 
+    }
+
+          padding: 30px !important;
+      }
+        .red-dot {
+            color: color($colors,f-dark) !important;
+        }
+        .label {
+            color: color($colors,f-dark) !important;
+        }
+        .title-login {
+            border-top: none !important;
+        }
+        .version {
+           
+            text-align: center;
+            font-size:20px;
+            color:color($colors,f-dark);
+        }
+        .img-heading-x {
+            width: 100%;
+            text-align: center;
+            padding: 25px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin: auto;
+        }
+        .promo-slide {
+            height: 200px;
+            background: color($colors,f-blue);
+        }
+        .promo-zoom {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center; // width: 100%;
+            text-align: center;
+        }
+      
+        .form-content {
+            margin: 50px;
+        }
+        .background-white {
+            background: color($colors,f-white);
+            margin-bottom: 2px;
+            border-radius: 2px;
+        }
+        .border-bottom {
+            border-bottom: #EDEDED 1px solid;
+        }
+        .login-button {
+            color: color($colors,f-white);
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 5px;
+            background:  color($colors,f-blue);
+            box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.29);
+        }
+        .forget-text {
+            margin-top: 20px;
+            text-align: center !important;
+            font-size: medium;
+            color: orange;
+        }
+        ion-footer{ 
+            background: color($colors,f-light1);
+        }
+    
+}

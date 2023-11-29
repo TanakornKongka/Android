@@ -1,0 +1,204 @@
+<!--
+  Generated template for the SearchProducePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton padding>
+
+    <ion-buttons start navPop>
+      <button ion-button icon-start ion-button icon-only>
+        <ion-icon class="back-home" name="menu"></ion-icon>
+        <span class="title-page">ค้นหาข้อมูลการชำระภาษีสินค้าและบริการ</span>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+
+  <form [formGroup]="typeForm">
+
+
+
+    <ion-list class="list-search-type" no-margin>
+
+      <ion-item *ngFor="let catagory of srpType, let i = index" >
+        <ion-label class="title-text" stacked>{{catagory.name}}</ion-label>
+        <ion-select class="type-selest-option" [disabled]="isDisable" interface="action-sheet" (ionChange)="getValue(typeForm.value, i)" formControlName="{{catagory.nameControl}}">
+          <ion-option selected="true" *ngFor="let item of itemSRP[i]" value="{{item.key}}">{{item.value}}</ion-option>
+        </ion-select>
+
+      </ion-item>
+
+
+      <ion-row radio-group padding [formControl]="typeForm.controls['offType']">
+        <ion-col>
+          <ion-item>
+            <ion-radio [disabled]="isDisable" class="radio-size" item-start mode="md" value="1"></ion-radio>
+            <ion-label class="title-radio-text">พื้นที่รับเงิน</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio [disabled]="isDisable" class="radio-size" item-start mode="md" value="2"></ion-radio>
+            <ion-label class="title-radio-text">พื้นที่เจ้าของเงิน</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-item >
+        <ion-label class="title-text" stacked>ทะเบียนสรรพสามิต</ion-label>
+        <ion-input no-margin [disabled]="isDisable" (ionChange)="getCustomer(typeForm.value.newRegId)" class="type-selest-option"
+          type="text" formControlName="newRegId"></ion-input>
+      </ion-item>
+
+
+      <ion-item >
+        <ion-label class="title-text" stacked>เลขประจำตัวผู้เสียภาษี</ion-label>
+        <ion-input no-margin [disabled]="isDisable" class="type-input-option-gray" type="text" readonly='true' formControlName="s1fld2_1"
+          value="{{id}}"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label class="title-text" stacked>ผู้ประกอบการ</ion-label>
+        <ion-input no-margin [disabled]="isDisable" class='type-input-option-gray' type="text" readonly='true' formControlName="s1fld4"
+          value="{{nameCompany}}"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label class="title-text" stacked>เลขที่ใบเสร็จรับเงิน</ion-label>
+        <ion-input no-margin [disabled]="isDisable" class="type-selest-option" type="text" formControlName="s1fld6"></ion-input>
+      </ion-item>
+
+      <ion-row padding-left>
+        <ion-col>
+          <ion-label class="title-text">วันที่รับชำระ ตั้งแต่</ion-label>
+          <ion-datetime class="type-selest-option" [disabled]="isDisable" no-padding displayFormat="DD MMMM YYYY" formControlName="s1fld7"
+            min="2016" max="2020-10-31">
+          </ion-datetime>
+        </ion-col>
+
+
+        <ion-col>
+          <ion-label class="title-text">ถึง</ion-label>
+          <ion-datetime class="type-selest-option" [disabled]="isDisable" no-padding displayFormat="DD MMMM YYYY" formControlName="s1fld8"
+            min="2016" max="2020-10-31">
+          </ion-datetime>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-item *ngFor="let catagory of moneyStatus, let i = index" >
+        <ion-label class="title-text" stacked>{{catagory.name}}</ion-label>
+        <ion-select [disabled]="isDisable" class="type-selest-option" interface="action-sheet" formControlName="{{catagory.nameControl}}">
+          <ion-option *ngFor="let item of itemMoney[i]" value="{{item.key}}">{{item.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+
+
+      <ion-row radio-group [formControl]="typeForm.controls['taxType']" padding>
+        <ion-item>
+          <ion-label center class="title-radio-center">รายการภาษี</ion-label>
+        </ion-item>
+        <ion-col>
+          <ion-item>
+            <ion-radio [disabled]="isDisable" class="radio-size" item-start mode="md" value="1"></ion-radio>
+            <ion-label class="title-radio-text">สินค้า</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio [disabled]="isDisable" class="radio-size" item-start mode="md" value="2"></ion-radio>
+            <ion-label class="title-radio-text">บริการ</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+
+      <ion-item>
+        <ion-label class="title-text" stacked>{{produceItem.name}}</ion-label>
+
+        <ion-select [disabled]="isDisable" class="type-selest-option" interface="action-sheet" formControlName="{{produceItem.nameControl}}">
+          <ion-option *ngFor="let item of produceItem.list" value="{{item.value}}">{{item.text}}</ion-option>
+        </ion-select>
+
+      </ion-item>
+    </ion-list>
+
+
+  </form>
+
+
+
+
+  <!-- <ion-grid class="row-table">
+    <ion-row>
+      <ion-col class="col-green" col-3>
+        <p>ลำดับ</p>
+      </ion-col>
+
+      <ion-col class="col-green" col-5>
+        <p>รายการ</p>
+      </ion-col>
+
+
+      <ion-col class="col-green" col-4>
+        <p>แบบชำระภาษี</p>
+      </ion-col>
+    </ion-row>
+
+
+    <p *ngIf="isShow" class="col-gray">ไม่พบข้อมูล</p>
+
+    <ion-row class="col-gray" *ngFor="let item of dummyTable , let i = index">
+
+      <ion-col col-3>
+        <p>{{i+1}}</p>
+      </ion-col>
+
+
+
+
+      <ion-col col-5 class="col-gray-detail">
+        <ion-row>
+          <p>เลขที่ใบเสร็จรับเงิน {{item.incctlNo}}</p>
+          <p>วันที่ชำระ {{item.receiptDate}}</p>
+          <p>ทะเบียนสรรพสามิต {{item.regId}}</p>
+          <p>ผู้ประกอบการ {{item.cusName}}</p>
+          <p>สินค้า {{item.productTypeName}}</p>
+          <p>สถานะ {{item.anaStatus}}</p>
+        </ion-row>
+      </ion-col>
+
+
+      <ion-col col-4>
+        <button *ngIf="item.anaStatus != 'ยังไม่บันทึกสินค้า'" float-left clear (tap)="openBrowser()" ion-button icon-only>
+          <ion-icon name="md-lock"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>
+<ion-footer class="pink-back" (tap)=" move()">
+    <button clear class="search-button title-foot"  ion-button icon-start ion-button icon-only>
+      <ion-icon  name="ios-search"></ion-icon>
+      <span class="title-page">ค้นหา</span>
+    </button>
+</ion-footer>

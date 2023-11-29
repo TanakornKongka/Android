@@ -1,0 +1,65 @@
+dialog-map {
+
+    .btn-close{
+        background: none;
+        position: absolute;
+        right: 12px;
+        z-index: 999;
+        top: 10px;
+        font-size: 25px;    
+    }
+
+    .content-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .title{
+            text-align: center;
+            display: block;
+            width: 100%;
+            padding: 8px;
+            line-height: 2em;
+        }
+
+        #map {
+            border: 1px solid #DDD;
+            width: 100%;
+            flex: 1;
+        }
+
+        .controller-container{
+            height: 3em; 
+            
+            button{
+                width: 100%;
+                height: 100%;
+                background-color: color($colors, r-orange);
+                color: color($colors, r-peach);
+            }
+    
+            button[disabled] {
+                opacity: 0.5;
+            }
+
+        }
+
+       
+    }
+    
+}
+
+ion-modal ion-backdrop {
+    visibility: visible !important;
+    z-index:0;
+}
+ion-modal .modal-wrapper{
+    // top: 20%;
+    width:90%;
+    height:90%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+}

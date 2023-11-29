@@ -1,0 +1,322 @@
+survey-retail-product-step-2 {
+    ion-select {
+        max-width: 100%;
+    }
+    ion-header {
+        .toolbar-title {
+            color: black;
+        }
+        .bg-title {
+            padding: 8px;
+            background: linear-gradient(to right, #fc9574, #fbc391);
+            color: white;
+            text-align: center;
+        }
+    }
+    ion-content {
+        form.address-form {
+            width: 100%;
+            margin: 1em 0;
+            .bg-title {
+                padding: 8px;
+                background: linear-gradient(to right, #fc9574, #fbc391);
+                color: white;
+                text-align: สำดะ;
+            }
+            .title-form {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 20px;
+                color: color($colors, r-ink);
+                font-size: 18px;
+            }
+            .select-disabled,
+            .item-select-disabled,
+            .item-input-disabled {
+                ion-label {
+                    opacity: 1;
+                }
+                ion-select,
+                input {
+                    width: 100%;
+                    background-color: #DDD;
+                    border-color: #777 !important;
+                }
+            }
+        }
+        .function-group {
+            margin-bottom: 8px;
+            height: 4.5em;
+            button {
+                width: 100%;
+                height: 100%;
+                background-color: color($colors, r-orange);
+                color: color($colors, r-peach);
+                padding: 5px 0;
+            }
+            
+            button.btn-store-image[disabled] {
+                opacity: 0.5;
+            }
+        }
+    }
+    .form-search {
+        .list-search-type {
+            padding-right: 0px;
+            width: 100%;
+            background: color($colors, f-white);
+            .item-select {
+                border-radius: 0px;
+            }
+            .input-wrapper {
+                padding: 0;
+            }
+            .title-text {
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .type-selest-option {
+                font-size: 15px;
+                padding: 5px 10px;
+                border-radius: 0px;
+                line-height: 2em;
+                width: 100%;
+                border: #DDDDDD solid 1px;
+            }
+            .item-inner {
+                border-bottom: none !important;
+                padding: 0px !important;
+            }
+        }
+    }
+    .no-licence-tab-container,
+    .licence-tab-container {
+        .input-wrapper {
+            padding: 0;
+        }
+        input.text-input {
+            border: #DDDDDD solid 1px;
+            padding: 5px 10px;
+            margin-top: 2px !important;
+            width: 100% !important;
+            font-size: 15px;
+            height: 2.5em;
+        }
+        .vat-regis {
+            padding: 8px 16px;
+            border: 1px solid #DDD;
+            margin: 16px 0;
+            width: 100%;
+        }
+        .search-licence-no {
+            ion-col {
+                padding: 0;
+            }
+            .licence-number-input {
+                border: 1px solid color($colors, r-orange);
+                border-radius: 30px;
+                min-height: 2em;
+                background-color: color($colors, r-peach);
+                color: color($colors, r-orange);
+                ::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: color($colors, r-orange);
+                    opacity: 0.4;
+                    /* Firefox */
+                }
+                ion-input {
+                    border: none;
+                    margin: 0;
+                    input {
+                        border: none;
+                        margin: 0;
+                        margin-left: 8px;
+                        line-height: 2em;
+                    }
+                }
+                button {
+                    background: none;
+                    margin: 0;
+                    background-color: color($colors, r-peach);
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        fill: color($colors, r-orange);
+                    }
+                }
+            }
+            .btn-scan-qr {
+                padding: 8px 9px;
+                border-radius: 50%;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: color($colors, r-orange);
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: white;
+                }
+            }
+        }
+
+        .search-store-name {
+            ion-col {
+                padding: 0;
+            }
+            .licence-number-input {
+                border: 1px solid #DDD;
+                min-height: 2em;
+                ::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: color($colors, r-orange);
+                    opacity: 0.4;
+                    /* Firefox */
+                }
+                ion-input {
+                    border: none;
+                    margin: 0;
+                    input {
+                        border: none;
+                        margin: 0;
+                        margin-left: 8px;
+                        line-height: 2em;
+                    }
+                }
+                button {
+                    background: none;
+                    margin: 0;
+                    ion-spinner {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            .btn-scan-qr {
+                padding: 8px 9px;
+                border-radius: 50%;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: color($colors, r-orange);
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: white;
+                }
+            }
+        }
+        .suggestion-container {
+            position: absolute;
+            z-index: 555; // border: 1px solid #DDD;
+            margin-left: 15px;
+            width: 100%;
+            padding-right: 55px;
+            ion-list {
+                border: 1px solid #DDD;
+                ion-item{
+                    padding-left: 10px;
+                }
+            }
+      
+        }
+        .store-image-container {
+            margin-bottom: 3em;
+            width: 100%;
+            .title {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 20px;
+                color: #333333;
+                font-size: 16px;
+            }
+            .content {
+                margin-bottom: 20px;
+                img {
+                    width: 100%;
+                    max-height: 200px;
+                    object-fit: contain;
+                    background-color: color($colors, r-peach);
+                    border: 1px solid color($colors, r-orange);
+                }
+            }
+            .buttons {
+                text-align: center;
+                display: block;
+                button {
+                    border-radius: 50%;
+                    padding: 15px;
+                    background-color: color($colors, r-orange);
+                    ion-icon {
+                        font-size: 2em;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .list-ios>.item-block:first-child {
+            border: none;
+        }
+    }
+    .tab-content-container {
+        .title-text.label {
+            font-size: 15px;
+            color: color($colors, r-gray);
+        }
+        .select-disabled,
+        .item-select-disabled,
+        .item-input-disabled {
+            ion-label {
+                opacity: 1;
+            }
+            ion-select,
+            input {
+                background-color: #DDD;
+                border-color: #777 !important;
+            }
+        }
+
+
+        .btn-toggle-hide{
+            padding: 0;
+            color: #DDD;
+
+            ion-icon{
+                color: #000000;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .red-color {
+        color: #e7505a !important;
+    }
+    ion-footer {
+        height: 4em;
+        background-color: color($colors, r-peach);
+        .page-navigation {
+            height: 100%;
+            .next {
+                text-align: right;
+                padding-right: 30px;
+            }
+            
+            .clear{
+                text-align: left;
+                padding-left: 30px;
+            }
+
+
+            button {
+                width: 100%;
+                height: 100%;
+                font-size: 16px;
+                background: none;
+                color: color($colors, r-fire);
+            }
+        }
+    }
+    .center-content {
+        text-align: center;
+    }
+}

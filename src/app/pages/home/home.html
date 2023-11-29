@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-navbar>
+
+    <button ion-button menuToggle right>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <img class="logo" src="assets/images/logo.png">
+    <ion-buttons end>
+      <button ion-button icon-end ion-button icon-only>
+        <ion-icon name="ios-notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="slider-container">
+    <ion-slides pager loop="true" speed="500">
+      <ion-slide *ngFor="let aNews of newsList" class="news-slide" >
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <img src="assets/images/banner-2.jpg" />
+            </ion-row>
+              
+            <div class="title">
+              <ion-row>
+                  สถิติภาษี
+              </ion-row>
+            </div>
+
+          </ion-col>
+        </ion-row>  
+      </ion-slide>
+    </ion-slides>
+    <div class="all-news">
+        ข้อมูลข่าวสารทั้งหมด
+      </div>
+  </ion-row>
+  <ion-row class="tab-menu-container">
+    <ion-segment mode="md" [(ngModel)]="menutab">
+      <ion-segment-button [style.border-color]="setSegmentColor('tabSubmit')" value="tabSubmit" class="text-align-right">
+        ยื่นเรื่อง <ion-icon name="ios-list-box"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button [style.border-color]="setSegmentColor('tabProducts')" value="tabProducts" class="text-align-left">
+        <ion-icon name="ios-flask-outline"></ion-icon> สินค้า
+      </ion-segment-button>
+    </ion-segment>
+  </ion-row>
+
+
+  <ion-row class="tab-content" [ngSwitch]="menutab">
+      
+    <ion-col class="tab-content-container submit-tab-container" *ngSwitchCase="'tabSubmit'">
+      <ion-row class="row-menu top-space">
+        <ion-col col-6>
+          <ion-row class="title-menu">
+            <img src="assets/images/ic-cash.png"/>
+            <div class="center">งานชำระภาษี</div>
+          </ion-row>
+        </ion-col>
+        <ion-col col-6>
+            <ion-row  class="title-menu">
+                <img src="assets/images/ic-cash.png"/>
+                <div class="center">ขอคืน <br/> ยกเวัน <br/> ลดหย่อน</div>
+            </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-menu bottom-space">
+        <ion-col col-4>
+            <ion-row  class="title-menu">
+              <div class="center">งบเดือน</div>
+            </ion-row>
+        </ion-col>
+        <ion-col col-8>
+            <ion-row  class="title-menu">
+              <div class="center">ขอใบอนุญาต์ผลิตและนำเข้า</div>
+
+            </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-menu">
+        <ion-col col-8>
+            <ion-row  class="title-menu bg-dark-blue">
+              <div class="center">ติดตามสถานะ / ดูแบบ</div>
+            </ion-row>
+        </ion-col>
+        <ion-col col-4>
+            <ion-row  class="title-menu bg-blue">
+                <div class="center">รายงาน</div>
+            </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+
+    <ion-col class="tab-content-container product-container" *ngSwitchCase="'tabProducts'">
+        <ion-row class="row-menu top-space">
+          <ion-col col-6>
+            <ion-row class="title-menu">
+              <div class="center">งานชำระภาษี</div>
+            </ion-row>
+          </ion-col>
+          <ion-col col-6>
+              <ion-row  class="title-menu">
+                  <div class="center">ขอคืน ยกเวัน ลดหย่อน</div>
+              </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row-menu bottom-space">
+          <ion-col col-6>
+              <ion-row  class="title-menu">
+                <div class="center">งบเดือน</div>
+              </ion-row>
+          </ion-col>
+          <ion-col col-6>
+              <ion-row  class="title-menu">
+                <div class="center">ขอใบอนุญาต์ผลิตและนำเข้า</div>
+  
+              </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row-menu">
+          <ion-col col-8>
+              <ion-row  class="title-menu">
+                <div class="center">ติดตามสถานะ / ดูแบบ</div>
+              </ion-row>
+          </ion-col>
+          <ion-col col-4>
+              <ion-row  class="title-menu">
+                  <div class="center">รายงาน</div>
+              </ion-row>
+          </ion-col>
+        </ion-row>
+    </ion-col>
+      
+         
+  </ion-row>
+  
+
+
+</ion-content>

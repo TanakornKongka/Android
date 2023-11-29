@@ -1,0 +1,27 @@
+@import "./common/header";
+@import "./common/body";
+@import "./common/popup";
+@import "./common/item";
+@import "./common/nav-menu";
+@import "./common/select";
+@import "./common/content/profile";
+@import "./common/slides";
+@import "./common/segment";
+@import "./common/modal";
+@import "./common/ion-footer";
+@import "./common/form";
+@import "./common/popover";
+@import "./common/alert.scss";
+
+// ion-nav {
+//     font-family: "scg";
+// }
+
+.delete-message {
+    min-width: 50px !important;
+    p {
+        font-size: xx-large;
+        color: color($colors, f-white);
+        line-height: 74px;
+    }
+}

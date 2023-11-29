@@ -1,0 +1,37 @@
+.item {
+    padding: 0; // border: color($colors, f-lightgray) 1px solid;
+    border: none;
+    .input-wrapper {
+        padding-left: 16px;
+    }
+}
+
+.item[clear] {
+    border: none;
+    .item-inner {
+        border: none;
+    }
+}
+
+*[no-padding] {
+    padding: 0;
+}
+
+*[no-line] {
+    border: none;
+    .item {
+        .item-inner {
+            border: none;
+        }
+    }
+}
+
+.item[common-item] {
+    .item-inner {
+        border: none;
+    }
+}
+
+ion-card {
+    border-radius: $border-radius !important;
+}

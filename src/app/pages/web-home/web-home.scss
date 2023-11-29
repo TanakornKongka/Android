@@ -1,0 +1,139 @@
+page-web-home {
+
+    .scroll-content{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    ion-header {
+
+
+        .title-page{
+            font-size: 20px;
+            font-weight: bolder !important;
+            color: color($colors, f-dark);
+        }
+        .back-home {
+            padding-right: 20px !important;
+            font-size: 20px;
+            font-weight: bold;
+            color: color($colors, f-dark) !important;
+        }
+
+        .user-name{
+            background: color($colors, alpha-blue) !important;
+            .name-text{
+                font-size: 12px;
+                font-weight: bold;
+                color: color($colors, f-white);
+            }
+
+            .log-out{
+                font-size: 12px;
+                font-weight: bold;
+                background: color($colors, f-blue) !important;
+                color:  color($colors, f-white) !important;
+            }
+        }
+    }
+
+    ion-content{
+        
+        .scroll-content{
+            padding: 30px;
+
+            .title-page{
+                font-size: 1.5em;
+                height: 3em;
+                border-bottom: 2px solid deepskyblue;
+            
+            }
+        }
+
+        .content.menus-container{
+            margin: auto;
+            margin-left: 0px;
+            margin-right: 0px;
+            .menu-item{
+                flex: 1;
+                padding:30px 20px;
+                height: 100px;
+                width: 100%;
+                text-align: center;
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .title{
+                text-align: left;
+                display: block;
+                color: white;
+                font-weight: bolder;
+                font-size: $xs;
+            }
+
+            .cover{
+                font-size: $m;
+                text-align: left;
+                font-weight: bolder;
+                color: white;
+            }
+            .set-center{
+                padding:10px 0px !important;
+            }
+            .top-round{
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+            .bottom-round{
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+        }
+
+
+        .news-container{
+            border-top: 3px solid #f39c12;
+            margin-bottom: 20px;
+            box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.16);
+
+            .title-row {
+                font-size: 18px;
+                border-bottom: 1px solid #f4f4f4;
+                padding: 5px;
+                display: block;
+            }
+
+            .content-text{
+                padding: 10px 5px;
+            }
+
+            .float-right{
+                float: right;
+            }
+
+            a{
+                color: #3c8dbc;
+            }
+        }
+
+        .app-version{
+            text-align: center;
+            display: block;
+            color: #DDD;
+        }
+
+        
+    }
+
+    ion-footer{
+
+       
+    }
+    
+    .pd-15{
+        padding: 15px !important;
+    }
+
+}

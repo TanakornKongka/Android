@@ -1,0 +1,133 @@
+.form-text {
+       margin-bottom: 20px;
+        // border: color($colors, f-lightgray) solid 1px;
+        .red-star {
+            color: #E21C59;
+        }
+        .list-search-type {
+            // padding: 20px 0px;
+            padding-right: 10px; // border-top: color($colors, f-lightgray) solid 1px;
+            //border-bottom: color($colors, f-lightgray) solid 1px;
+            .center-text{
+                text-align: center !important;
+            }
+            .item-select {
+                border-radius: 0px;
+            }
+            .item-block:first-child {
+                border-top: none;
+            }
+            .item-block:last-child {
+                border-bottom: none;
+            }
+            .select-searchable-has-placeholder .select-searchable-value-item {
+                color: color($colors, ink)!important;
+            }
+            .select-placeholder {
+                color: color($colors, ink)!important;
+            }
+            background: color($colors, f-white);
+            .title-text {
+                font-size: $xxs;
+                white-space: inherit;
+                font-weight: bold;
+                color: color($colors, f-lightgray);
+            }
+            .type-selest-option {
+                font-size: $xs;
+                padding: 16px;
+                border-radius: 3px;
+                color: #000000 !important;
+                border: color($colors, cloud) solid 1px;
+                .alert-ios [aria-checked=true] .alert-radio-label {
+                    color: #000000 !important;
+                }
+                ::placeholder { 
+                
+                    color: color($colors, ink)!important;
+                   
+                }
+            }
+            .item-inner {
+                border-bottom: none !important;
+                padding: 0px !important;
+            }
+        }
+        .row-bottom {
+            padding: 20px 10px;
+            width: 100% !important;
+            margin: auto !important;
+            background: transparent;
+            padding-bottom: 0px !important;
+            .right-button {
+               // width : 20% !important;
+                margin: auto !important;
+                padding-left:10px !important;
+                // text-align: right;
+                // font-size: 12px;
+                // font-weight: bold;
+                // color: color($colors, f-white);
+                // background: #DBA901;
+            }
+            .left-button {
+                width: calc( 100% - 70px );
+                margin: auto !important;
+                height: 100%;
+                // color: color($colors, f-dark);
+                // background: color($colors, f-gray);
+                // font-size: 12px;
+                // font-weight: bold;
+            }
+        }
+        .row-table {
+            margin-top: 10px;
+            padding: 20px 40px;
+            padding-bottom: 0px !important;
+            border: color($colors, f-lightgray) solid 1px;
+            .icon-right {
+                text-align: right;
+            }
+            .type-selest-option {
+                font-size: 12px;
+                padding: 5px 10px;
+                border-radius: 0px;
+                color: #000000 !important;
+                border: color($colors, f-lightgray) solid 1px;
+                .alert-ios [aria-checked=true] .alert-radio-label {
+                    color: #000000 !important;
+                }
+            }
+            .max-width {
+                max-width: 100% !important;
+            }
+            .col-green {
+                background: color($colors, f-green);
+                border-right: color($colors, f-white) solid 1px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 16px;
+                height: 50%;
+                color: color($colors, f-white);
+            }
+            .col-gray-detail {
+                background: color($colors, f-light1);
+                text-align: left;
+                white-space: pre-line;
+                display: inherit;
+                color: color($colors, f-dark);
+            }
+            .padding-left {
+                padding-left: 5px;
+            }
+            .col-gray {
+                background: color($colors, f-light1);
+                text-align: center;
+                color: color($colors, f-dark);
+                ion-icon {
+                    color: color($colors, f-dark);
+                    background: transparent !important;
+                }
+            }
+        }
+    
+}

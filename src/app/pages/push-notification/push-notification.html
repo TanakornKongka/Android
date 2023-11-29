@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Push Notification</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-item>
+    <ion-label stacked>SENDER ID</ion-label>
+    <ion-input type="text" [(ngModel)]="senderId"></ion-input>
+  </ion-item> -->
+  <ion-card *ngIf="util.getDeviceType() == 'O'">
+    <ion-list radio-group [(ngModel)]="isSandbox">
+      <ion-list-header>Select Sandbox (iOS)</ion-list-header>
+      <ion-item>
+        <ion-label>ON</ion-label>
+        <ion-radio value="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>OFF</ion-label>
+        <ion-radio value="false"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-item *ngIf="util.isNotNullOrEmpty(regCode)">
+    <ion-label stacked>Register Code</ion-label>
+    <ion-input type="text" [(ngModel)]="regCode"></ion-input>
+  </ion-item>
+  <br/>
+  <div *ngIf="!util.isNotNullOrEmpty(regCode)">
+    <button ion-button block round (click)="onClickRegisterPushNoti()">Register Push</button>
+  </div>
+  <div *ngIf="util.isNotNullOrEmpty(regCode)">
+    <button ion-button block round color="danger" (click)="onClickUnRegisterPushNoti()">Unregister Push</button>
+  </div>
+  <ion-list>
+    <ion-list-header>Message List</ion-list-header>
+    <ion-item *ngFor="let m of messageList">
+      <h2>{{m.title}}</h2>
+      <ion-textarea type="text" value="{{ genJsonString(m) }}"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button *ngIf="messageList.length > 0" ion-button block round color="danger" (click)="onClickDeleteMessage()">Delete messages</button>
+</ion-content>

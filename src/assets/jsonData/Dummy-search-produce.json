@@ -1,0 +1,40 @@
+{
+    "sent": [
+        {
+            "name": "barCode",
+            "value": ""
+        },
+        {
+            "name": "groupId",
+            "value": ""
+        },
+        {
+            "name": "catId",
+            "value": ""
+        },
+        {
+            "name": "brandMainCode",
+            "value": ""
+        },
+        {
+            "name": "brandSecondCode",
+            "value": ""
+        },
+        {
+            "name": "modelCode",
+            "value": ""
+        },
+        {
+            "name": "sizeCode",
+            "value": ""
+        },
+        {
+            "name": "unitCode",
+            "value": ""
+        },
+        {
+            "name": "txtBarCode",
+            "value": ""
+        }
+    ]
+}

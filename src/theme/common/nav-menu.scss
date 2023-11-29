@@ -1,0 +1,92 @@
+// .nav-menu {
+//     // .menu-content {
+//     //     .menu-list {
+//     //         button {
+//     //             padding: 5px;
+//     //             border: color($colors, f-lightgray) 1px solid;
+//     //         }
+//     //         .item-inner {
+//     //             border: none;
+//     //         }
+//     //     }
+//     // }
+// }
+ion-header{
+    background: transparent !important;
+}
+.nav-menu {
+    background: color($colors,  f-navbar-back); 
+    color: color($colors, f-white);
+    text-align: center;
+   
+   h3{
+      margin-bottom: 0rem;
+   }
+ //Edit Profile
+     .edit-button{
+          background: transparent;
+          color: color($colors, f-white);
+
+      } 
+      .edit-icon{
+          fill: color($colors, f-white);             
+          width:10px;
+      }  
+  
+      
+  
+  
+ .avatar-position {
+              top: 10px; 
+              width: 100%;
+              z-index: 100;
+              margin-bottom: 20px;
+          
+              border-color: color($colors, f-white);
+              p {
+                  width: 30%;
+                  margin-left: auto;
+                  margin-right: auto;
+              }
+          }
+      
+          .radius-img {
+              border-radius: 50%;
+              border: color($colors,  f-white) 3px solid;
+              width: 100%;
+          }
+      .menu-list {
+           background: transparent;
+           border-bottom: color($colors, f-navbar-line) 1px solid;
+           
+          button {
+              padding: 10px;
+              font:18px;
+              background: transparent;
+              color: color($colors, f-white);
+              border-bottom: color($colors, f-navbar-line) 1px solid;
+              .active{
+                  background: color($colors, f-navbar-line);
+              }
+          }
+         
+          svg-icon{
+             margin: 10px;
+             margin-right: 20px;
+             fill: color($colors, f-white);             
+             width:18px;
+             height: 18px;
+          }
+          .item-inner {
+              border: none;
+          }
+
+          .item-block:first-child {
+              border-top: color($colors, f-navbar-line) 1px solid;
+          }
+          .item-block:last-child {
+              border-bottom: color($colors, f-navbar-line) 1px solid;
+          }
+      }
+  
+}

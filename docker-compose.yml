@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ionic:
+    build: ./
+    container_name: ed-survey-mobile
+    hostname: ed-survey-mobile
+    ports:
+    - "0.0.0.0:8100:8100" # ionic dev server
+    expose:
+    - "8100"

@@ -1,0 +1,39 @@
+<ion-menu [content]="content" side="left" type="overlay" [swipeEnabled]="false">
+
+  <ion-content class="nav-menu" no-padding>
+    
+    <ion-row class="header">
+      <ion-col>
+        <ion-row class="block">
+          <img class="logo" src="assets/images/logo.png" />
+        </ion-row>
+        <ion-row>
+          <ion-col col-9 class="no-padding">
+            <button ion-item  detail-none>
+              <svg-icon src="assets/images/icon/user.svg" item-left></svg-icon>
+              Sarawut
+            </button>
+          </ion-col>
+          <ion-col col-3 class="no-padding">
+            <!-- <button ion-item menuClose detail-none class="btn-sign-out" >
+              <ion-icon name="ios-log-out"></ion-icon>
+            </button> -->
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-list class="menu-list" no-padding>
+      <div *ngFor="let page of pages">
+        <button ion-item menuClose detail-none [ngClass]="{'btn-active' : page.opens}" [style.color]="hightlightColor(page)" (tap)="openPage(page)">
+          <!-- <svg-icon *ngIf="page.icon" src="{{page.icon}}" item-left></svg-icon> -->
+          {{page.title}}
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+  <ion-backdrop></ion-backdrop>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage" class="tran" ></ion-nav>

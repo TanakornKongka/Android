@@ -1,0 +1,21 @@
+ion-popover{
+   background: transparent;
+
+
+   ion-backdrop {
+     background-color:transparent; 
+    }
+    .popover-content { 
+
+        border-radius: 2px !important;
+        margin-right: 10px !important;
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.5);
+      
+    }
+    .popover-arrow::after {
+       
+        width: 0px !important;
+        height: 0px !important;
+      
+    }
+}

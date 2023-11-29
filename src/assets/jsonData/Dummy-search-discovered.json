@@ -1,0 +1,186 @@
+{
+    
+    "produceSent": [
+        {
+            "name": "groupId",
+            "value": ""
+        },
+        {
+            "name": "catId",
+            "value": ""
+        },
+        {
+            "name": "brandMainCode",
+            "value": ""
+        },
+        {
+            "name": "brandSecondCode",
+            "value": ""
+        },
+        {
+            "name": "modelCode",
+            "value": ""
+        },
+        {
+            "name": "surveyNo",
+            "value": "1"
+        },
+        {
+            "name": "yearSurvey",
+            "value": "2561"
+        },
+        {
+            "name": "surveyDateTo",
+            "value": ""
+        },
+        {
+            "name": "surveyDateFrom",
+            "value": ""
+        },
+        {
+            "name": "userStatus",
+            "value": ""
+        }
+    ],
+    "produceSentT": [
+        {
+            "name": "groupId",
+            "value": ""
+        },
+        {
+            "name": "degree",
+            "value": ""
+        },
+        {
+            "name": "sizeCode",
+            "value": ""
+        },
+        {
+            "name": "sizeName",
+            "value": ""
+        },
+        {
+            "name": "unit",
+            "value": ""
+        },
+        {
+            "name": "size",
+            "value": ""
+        },
+        {
+            "name": "surveyNo",
+            "value": "1"
+        },
+        {
+            "name": "yearSurvey",
+            "value": "2561"
+        },
+        {
+            "name": "surveyDateTo",
+            "value": ""
+        },
+        {
+            "name": "surveyDateFrom",
+            "value": ""
+        },
+        {
+            "name": "userStatus",
+            "value": ""
+        }
+    ],
+    "areaSent": [
+        {
+            "name": "zoneCode",
+            "value": ""
+        },
+        {
+            "name": "areaCode",
+            "value": ""
+        },
+        {
+            "name": "areaBranchCode",
+            "value": ""
+        },
+        {
+            "name": "storeTypeCode",
+            "value": ""
+        },
+        {
+            "name": "storeGroup",
+            "value": ""
+        },
+        {
+            "name": "groupId",
+            "value": ""
+        },
+        {
+            "name": "catId",
+            "value": ""
+        },
+        {
+            "name": "surveyNo",
+            "value": "1"
+        },
+        {
+            "name": "yearSurvey",
+            "value": "2561"
+        },
+        {
+            "name": "surveyDateTo",
+            "value": ""
+        },
+        {
+            "name": "surveyDateFrom",
+            "value": ""
+        }
+    ],
+    "priceSent": [
+        {
+            "name": "groupId",
+            "value": ""
+        },
+        {
+            "name": "catId",
+            "value": ""
+        },
+        {
+            "name": "brandMainCode",
+            "value": ""
+        },
+        {
+            "name": "brandSecondCode",
+            "value": ""
+        },
+        {
+            "name": "modelCode",
+            "value": ""
+        },
+        {
+            "name": "storeTypeCode",
+            "value": ""
+        },
+        {
+            "name": "storeGroup",
+            "value": ""
+        },
+        {
+            "name": "surveyNo",
+            "value": ""
+        },
+        {
+            "name": "yearSurvey",
+            "value": ""
+        }, {
+            "name": "surveyDateTo",
+            "value": ""
+        },
+        {
+            "name": "surveyDateFrom",
+            "value": ""
+        },
+        {
+            "name": "userStatus",
+            "value": ""
+        }
+    ]
+}

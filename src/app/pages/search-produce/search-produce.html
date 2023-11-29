@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title left>ค้นหาราคาขายปลีกแนะนำสำหรับการเปรียบเทียบปรับคดี</ion-title>
+
+  </ion-navbar>
+
+  <ion-segment mode="md" [(ngModel)]="searchTitle" (ionChange)="getInformation(searchTitle)"
+    [style.background]="util.updateThemeColor(1).gradient">
+    <ion-segment-button value="1">
+      ค้นหาตามกลุ่มสินค้า
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      ค้นหาด้วย barcode <span>
+        <ion-icon name="md-barcode"></ion-icon>
+      </span>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-header>
+
+
+<ion-content>
+
+
+
+
+  <form [formGroup]="typeForm" class="form-text">
+    <!-- <ion-list  class="list-search-type">
+      <ion-item>
+          <ion-label class="title-text" stacked>การจำหน่าย (ในประเทศ/ส่งออก)
+            <span class="red-star"> *</span>
+          </ion-label>
+          <select-searchable class="type-selest-option" item-content formControlName="saleTypeId" [items]="saleType"
+            itemValueField="key" itemTextField="value" (onChange)="saleTypeChanged($event)">
+          </select-searchable>
+        </ion-item>
+      </ion-list> -->
+    <ion-list class="list-search-type" *ngIf="isShow" no-margin>
+
+      <div *ngFor="let catagory of title, let i = index">
+        <ion-item *ngIf="listShow(i)">
+          <ion-label class="title-text" stacked>{{catagory.name}}
+            <span class="red-star" *ngIf="i == 0">*</span>
+          </ion-label>
+          <select-searchable placeholder="{{catagory.firstChoice}}" class="type-selest-option" item-content
+            formControlName="{{catagory.nameControl}}" [items]="items[i]" itemValueField="key" itemTextField="value"
+            [canSearch]="true" (onChange)="getValue(typeForm.value, i)" selected="true"></select-searchable>
+        </ion-item>
+      </div>
+    </ion-list>
+  </form>
+  <form [formGroup]="brandMainNameForm" class="form-text">
+    <ion-list class="list-search-type" *ngIf="isShowBrandMainName" no-margin>
+      <ion-item>
+        <ion-label class="title-text" stacked>ยี่ห้อหลัก ยี่ห้อรอง แบบ/รุ่น (รายละเอียดสินค้า)
+          <span class="red-star">*</span>
+        </ion-label>
+        <ion-input class="text-input-brandMainName" type="text" formControlName="brandMainName"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+
+  <ion-row *ngIf="!isShow" class="row-bottom">
+    <div class="type-input-option left-button" [style.color]="util.updateThemeColor(1).dark"
+      [style.background]="util.updateThemeColor(1).light">
+
+      <ion-item no-lines class="barcode-input item-input">
+        <ion-input type="text" placeholder="Barcode สินค้า" class="type-input" [(ngModel)]="barcode"></ion-input>
+      </ion-item>
+
+      <svg-icon (tap)="startSearch(typeForm.value)" src="assets/images/icon/search.svg"></svg-icon>
+    </div>
+
+    <span class="right-button">
+      <button class="button-scan-bar" [style.background]="util.updateThemeColor(1).primary" ion-button icon-only
+        (tap)="scanBarcode()">
+        <ion-icon name="md-barcode"></ion-icon>
+      </button>
+    </span>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer [style.background]="util.updateThemeColor(1).light" (tap)="startSearch(typeForm.value) ">
+  <button clear class="search-button title-foot" ion-button icon-start ion-button icon-only>
+    <ion-icon name="ios-search" [style.color]="util.updateThemeColor(1).dark"></ion-icon>
+    <span class="title-page" [style.color]="util.updateThemeColor(1).dark">ค้นหา</span>
+  </button>
+</ion-footer>

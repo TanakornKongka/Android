@@ -1,0 +1,35 @@
+dialog-image-viewer {
+
+    .content-container {
+        height: 100%;
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    img{
+        width: 100%;
+        border: 1px solid #c3c3c3;
+        position: relative;
+    }
+
+    h2{
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+    
+}
+
+ion-modal ion-backdrop {
+    visibility: visible !important;
+    z-index:0;
+}
+ion-modal .modal-wrapper{
+    width:80%;
+    height:70%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+}

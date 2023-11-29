@@ -1,0 +1,31 @@
+<ion-content class="background-white-gray" no-padding>
+
+  <div pager class="promo-slide promo-zoom">
+    <img class="img-heading-x" src="assets/images/logo2.png" />
+  </div>
+<!--     <div style="text-align: center;">
+      <span style="font-size: 20px;font-weight: bolder;color: red;" stacked>ระบบทดสอบ</span>
+    </div> -->
+
+
+  <form class="form-login" padding [formGroup]="loginForm" (ngSubmit)="doLogin()">
+
+    <ion-list no-margin>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" formControlName="username" name="username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password" name="password" required></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button class="login-button" ion-button full type="submit" [disabled]="!loginForm.valid">LOGIN</button>
+  </form>
+
+</ion-content>
+<ion-footer>
+  <div center padding class="version">Version {{verInfo}}</div>
+</ion-footer>

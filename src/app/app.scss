@@ -1,0 +1,95 @@
+ @import "bourbon";
+ @import "../theme/common";
+
+
+//$output-bourbon-deprecation-warnings: false;
+//
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.nav-menu{
+
+    background: #ffffff;
+
+    .block{
+        display: block;
+      
+    }
+    .logo{
+        width: 100%;
+        width: auto;
+        height: 100%;
+        margin: 20px 0;
+        max-height: 40px;
+    }
+
+    .header{
+        background: linear-gradient(to right, #345fd9 , #4b7bfd);
+
+        .col{
+            padding: 0;
+        }
+        
+        button{
+            border: none!important;
+            background: none;
+            color: white;
+            padding-left: 20px;
+
+            svg-icon{
+                fill: white;
+                min-width: 18px;;
+            }
+        }
+
+        button.btn-active {
+            svg-icon{
+                fill: color($colors, alpha-blue);
+            }
+        }
+
+        button.btn-sign-out{
+            padding-left: 0px;
+
+            ion-label{
+                margin: 0 10px;
+                text-align: right;
+                font-size: 1.2em;
+            }
+        }
+
+        .item-inner{
+            border: none;
+        }
+    }
+
+    .menu-list{
+        border-bottom:none;
+        color: #000;
+        button{
+            border-bottom: #DDD 1px solid!important;
+            border-top: none!important;
+        }
+
+        svg-icon{
+            fill: #777777;
+        }
+    }
+}
+
+
+ion-label { 
+    white-space: normal !important; 
+  }

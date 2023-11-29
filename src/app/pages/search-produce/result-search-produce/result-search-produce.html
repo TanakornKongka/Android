@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ResultSearchProducePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+    <ion-navbar no-padding>
+        <ion-title [style.background]="util.updateThemeColor(1).gradient" left>ผลการค้นหา</ion-title>
+        
+  
+  
+   
+      <ion-buttons end>
+        <button ion-button ion-button icon-only  icon-end>
+          <span  [style.color]="util.updateThemeColor(1).dark" class="amount-list">{{resultList.length}}&nbsp;</span>
+          <span  [style.color]="util.updateThemeColor(1).dark" class="small-text">รายการ</span>
+          <ion-icon *ngIf="isCanDelete" [style.color]="util.updateThemeColor(3).dark" class="small-text" name="md-more"></ion-icon>
+  
+        </button>
+  
+      </ion-buttons>
+  
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <div class="center-text"  *ngFor="let item of resultList">
+      <p [style.color]="util.updateThemeColor(1).dark"  class="blu-text">{{item.showregId}}</p>
+      <h4 no-margin class="pb-1">{{item.facName}}</h4>
+      <h4 no-margin class="pb-1">{{item.brandName}}</h4>
+      <p no-margin class="pb-1">{{item.desc}}</p>
+ 
+  <p  class="barcode-bg blu-text"
+  [style.color]="util.updateThemeColor(1).dark" 
+  [style.background]="util.updateThemeColor(1).light">{{item.barcode}}</p>
+
+  <ion-row class="padding-left-right">
+    <ion-col class="left-text">
+        <h4 no-margin >{{item.usedDate}}</h4>
+        <p no-margin>วันที่เริ่มใช้ราคา</p>
+    </ion-col>
+    <ion-col col-1 class="small-bordor"></ion-col>
+    <ion-col col-1 class="small-bordor border-left"></ion-col>
+    <ion-col class="right-text">
+        <h4 no-margin>{{item.retailPrice}}</h4>
+        <p no-margin>ราคาขายปลีกแนะนำ<b>
+          <!-- <div class="text-type">{{item[7]}}</div> -->
+        </b></p>
+    </ion-col>
+  </ion-row>
+ </div>
+  
+</ion-content>

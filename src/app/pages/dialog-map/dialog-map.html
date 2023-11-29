@@ -1,0 +1,21 @@
+
+<ion-content>
+
+  <ion-row class="content-container" >
+    <ion-row class="title">
+      เลือกพิกัดของร้านค้า
+    </ion-row>
+
+    <div #map id="map"></div> 
+
+    <ion-row class="controller-container">
+      <ion-col>
+        <button [disabled]="markers.length == 0" (tap)="submit()">เลือกพิกัด</button>
+      </ion-col>
+      <ion-col>
+        <button (tap)="dismiss()">ยกเลิก</button>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+</ion-content>

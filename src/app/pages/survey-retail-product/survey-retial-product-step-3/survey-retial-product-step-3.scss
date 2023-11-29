@@ -1,0 +1,217 @@
+survey-retial-product-step-3 {
+  ion-header {
+    .toolbar-title {
+      color: black;
+    }
+
+    .bg-title {
+      padding: 8px;
+      background: linear-gradient(to right, #fc9574, #fbc391);
+      color: white;
+      text-align: center;
+    }
+  }
+  ion-content {
+    .button-scan-bar {
+      margin: 0px;
+      width: 55px;
+      padding: 5px;
+      height: 55px;
+      border-radius: 40px;
+      text-align: center;
+      font-weight: bold;
+      color: color($colors, f-white);
+      ion-icon {
+        font-size: 25px;
+      }
+    }
+
+    .center-text-align {
+      margin: 20px 0px;
+
+      h3 {
+        text-align: center;
+        width: 100%;
+        tab-size: $m;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      p {
+        width: 100%;
+        text-align: center;
+        tab-size: $xxs;
+      }
+    }
+
+    .title-text-center {
+      text-align: center;
+      font-size: $xxs;
+      white-space: inherit;
+      font-weight: bold;
+      color: color($colors, f-lightgray);
+    }
+    .item-input-search{
+      min-height: 2em;
+      background-color: transparent;
+
+      ion-input {
+        // border: none;
+        margin: 0;
+        input {
+          //   border: none;
+          margin: 0;
+          margin-left: 8px;
+          line-height: 2em;
+          border-radius: 3px;
+          padding: 5px 10px;
+          margin-top: 2px !important;
+          width: 100% !important;
+          font-size: 15px;
+          height: 2.5em;
+        }
+      }
+    }
+    .type-input-option {
+      padding: 5px;
+      font-size: $xs;
+      border-radius: 40px;
+      ::placeholder {
+        font-size: $xs;
+        color: color($colors, fire);
+      }
+      ::-webkit-input-placeholder {
+        white-space: nowrap; //position:relative;
+      }
+      svg-icon {
+        width: $m;
+        margin: 10px 0px;
+        fill: color($colors, fire) !important;
+      }
+
+      .input {
+        margin-left: 8px;
+        margin-top: 2px;
+      }
+
+      .flex-all {
+        flex: 1;
+      }
+
+      .btn-search {
+        padding: 0 16px;
+      }
+    }
+
+    .button-text {
+      padding: 20px !important;
+      border-radius: 5px;
+      color: color($colors, f-white);
+      font-size: $xs;
+    }
+
+    .suggestion-container {
+      position: absolute;
+      z-index: 9999;
+      // border: 1px solid #DDD;
+      margin-left: 17px;
+      width: 100%;
+      padding-right: 55px;
+
+      ion-list {
+        border: 1px solid #ddd;
+      }
+
+      ion-item {
+        color: color($colors, r-ink);
+      }
+    }
+
+    .product-details-container {
+      text-align: center;
+      display: block;
+      width: 100%;
+      padding-top: 10px;
+
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .product-details ion-label {
+        font-size: 14px;
+      }
+
+      .price-input-container {
+        .input-wrapper {
+          padding: 0px;
+        }
+
+        .item-inner {
+          border: none;
+        }
+
+        input {
+          border: 1px solid #ddd;
+          line-height: 2;
+          text-align: right;
+          padding: 0px 10px;
+        }
+
+        button {
+          border: #f7ca18 solid 1px;
+          padding: 3px 10px;
+          line-height: 2;
+          margin: 11px 8px 11px 0;
+          background-color: #f7ca18;
+          color: white;
+        }
+      }
+
+      .save-btn-container {
+        button {
+          padding: 10px;
+          border-radius: 5px;
+          color: white;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .search-products-container {
+      .save-btn-container {
+        button {
+          padding: 10px;
+          border-radius: 5px;
+          color: white;
+          font-size: 14px;
+        }
+      }
+
+      input {
+        line-height: 2.5em;
+        border: 1px solid #ddd;
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .red-color {
+    color: #e7505a !important;
+  }
+
+  .bg-coral {
+    background-color: color($colors, r-coral);
+  }
+
+  .bg-orange {
+    background-color: color($colors, r-orange);
+  }
+
+  .bg-fire {
+    background-color: color($colors, r-fire);
+  }
+
+  .center-content {
+    text-align: center;
+  }
+}

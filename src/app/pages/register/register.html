@@ -1,0 +1,273 @@
+
+<ion-header>
+
+  <div pager class="promo-slide promo-zoom">
+    <!-- <img class="img-heading-x" src="./assets/images/Central_Group_Logo.png" /> -->
+    <img class="img-heading-x" src="assets/images/logo.png" />
+  </div>
+
+
+  <!--First Step-->
+  <ion-row *ngIf="firstStep">
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+      <ion-row class="line-center">
+        <ion-col class="step-do" no-padding col-5></ion-col>
+        <ion-col class="circle-do" no-padding col-6>
+          <h3>1</h3>
+        </ion-col>
+        <ion-col class="step-undo" no-padding col-1></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+      <ion-row class="line-center">
+        <ion-col class="step-undo" no-padding col-5></ion-col>
+        <ion-col class="circle-undo" no-padding col-2></ion-col>
+        <ion-col class="step-undo" no-padding col-5></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+      <ion-row class="line-center">
+        <ion-col class="step-undo" no-padding col-3></ion-col>
+        <ion-col class="circle-undo" no-padding col-2></ion-col>
+        <ion-col class="step-undo" no-padding col-7></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+  </ion-row>
+
+
+
+
+
+
+  <!--Second Step-->
+  <ion-row *ngIf="secondStep">
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+      <ion-row class="line-center">
+        <ion-col class="step-do" no-padding col-7></ion-col>
+        <ion-col class="circle-done" no-padding col-2></ion-col>
+        <ion-col class="step-do" no-padding col-3></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+
+      <ion-row class="line-center">
+        <ion-col class="step-do" no-padding col-3></ion-col>
+        <ion-col class="circle-do" no-padding col-6>
+          <h3>2</h3>
+        </ion-col>
+        <ion-col class="step-undo" no-padding col-3></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+      <ion-row class="line-center">
+        <ion-col class="step-undo" no-padding col-3></ion-col>
+        <ion-col class="circle-undo" no-padding col-2></ion-col>
+        <ion-col class="step-undo" no-padding col-7></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+  </ion-row>
+
+
+
+
+
+  <!-- step-->
+  <ion-row *ngIf="thirdStep">
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+      <ion-row class="line-center">
+        <ion-col class="step-do" no-padding col-7></ion-col>
+        <ion-col class="circle-done" no-padding col-2></ion-col>
+        <ion-col class="step-do" no-padding col-3></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+
+      <ion-row class="line-center">
+        <ion-col class="step-do" no-padding col-5></ion-col>
+        <ion-col class="circle-done" no-padding col-2></ion-col>
+        <ion-col class="step-do" no-padding col-5></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+
+    <ion-col col-4 class="step-sequence" no-padding>
+
+
+      <ion-row class="line-center">
+        <ion-col class="step-do" no-padding col-1></ion-col>
+        <ion-col class="circle-do" no-padding col-6>
+          <h3>3</h3>
+        </ion-col>
+        <ion-col class="step-undo" no-padding col-5></ion-col>
+      </ion-row>
+
+    </ion-col>
+
+
+  </ion-row>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+
+
+
+  <form class="form-register" [formGroup]="loginForm"  padding>
+
+    <ion-list no-margin *ngIf="firstStep">
+
+      <ion-item>
+        <ion-label floating>ชื่อ นามสกุล / บริษัท / หจก.</ion-label>
+        <ion-input type="text" formControlName="fullname" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เลขบัตรประชาชน / นิติบุคคล</ion-label>
+        <ion-input type="number" formControlName="identitynum" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เลขที่ใบอนุญาต ปี {{year}}</ion-label>
+        <ion-input type="number" formControlName="permissionnum" required></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+
+
+    <ion-list no-margin *ngIf="secondStep">
+
+      <ion-item>
+        <ion-label floating>ตั้ง ชื่อผู้ใช้งาน</ion-label>
+        <ion-input type="text" formControlName="username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label  floating>ตั้ง รหัสผ่าน</ion-label>
+        <ion-input type="{{passwordType}}" formControlName="password"  required></ion-input>
+        <button *ngIf="eyeAppear()"  ion-button class="button-eye" (tap)=" isHidePass()" no-margin item-end>
+          <ion-icon name="{{iconEye}}" class="icon-eye"></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ยืนยันรหัสผ่าน</ion-label>
+        <ion-input type="password" formControlName="confirm" ionic-password-show-hide required></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+
+
+
+    <ion-list no-margin *ngIf="thirdStep">
+
+      <ion-item>
+        <ion-label floating>อีเมล</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ที่อยู่ เลขที่</ion-label>
+        <ion-input type="number" formControlName="housenum" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>จังหวัด</ion-label>
+        <!-- <ion-input type="text" " required></ion-input> -->
+        <ion-select  formControlName="province">
+            <ion-option  value="f">ภูเก็ต</ion-option>
+            <ion-option value="m">Male</ion-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>อำเภอ / เขต</ion-label>
+        <!-- <ion-input type="text" formControlName="district" required></ion-input> -->
+        <ion-select  formControlName="district">
+            <ion-option  value="f">เมืองภูเก็ต</ion-option>
+            <ion-option value="m">Male</ion-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>ตำบล / แขวง</ion-label>
+        <!-- <ion-input type="text" formControlName="subdistrict" required></ion-input> -->
+        <ion-select  formControlName="subdistrict">
+            <ion-option  value="f">วิชิต</ion-option>
+            <ion-option value="m">Male</ion-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ถนน</ion-label>
+        <ion-input type="text" formControlName="road" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>รหัสไปรษณีย์</ion-label>
+        <ion-input type="text" formControlName="postcode" required></ion-input>
+      </ion-item>
+
+
+
+    </ion-list>
+
+
+  </form>
+
+</ion-content>
+<ion-footer>
+  <ion-row class="row-bottom">
+    <ion-col>
+      <button ion-button icon-start clear class="left-button" (click)="backStep(loginForm.value)">
+        <ion-icon name="md-arrow-back"></ion-icon>
+        กลับ
+      </button>
+    </ion-col>
+    <ion-col></ion-col>
+    <ion-col>
+      <button type="submit" float-right ion-button clear icon-end class="right-button" (click)="nextStep(loginForm.value)">
+        ถัดไป
+        <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,113 @@
+<!--
+  Generated template for the SearchProducePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <img class="logo" src="assets/images/logo.png">
+  </ion-navbar>
+
+  <ion-row class="user-name">
+    <ion-col class="name-text" col-6>
+      <p no-margin>{{user.company}}</p>
+      <ion-icon name="md-person"></ion-icon>
+      <span>{{user.name}}</span>
+    </ion-col>
+
+    <ion-col col-6>
+      <button class="log-out" float-right ion-button icon-start (tap) = "logout()">
+        <ion-icon name="md-power"></ion-icon>
+        ออกจากระบบ
+      </button>
+    </ion-col>
+  </ion-row>
+  
+  <div class="title-form" >
+      <ion-icon name="ios-copy-outline"></ion-icon>
+      <span>ค้นหาสินค้าที่สำรวจแล้ว</span>
+      <button class="back-home" float-right ion-button icon-start navPop>
+          <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+          กลับหน้าหลัก
+        </button>
+    </div>
+</ion-header>
+
+
+<ion-content padding>
+  
+
+  <form class="form-search" [formGroup]="typeForm" padding>
+
+
+      <ion-list class="list-search-type"   no-margin>
+
+
+      <ion-item *ngFor="let catagory of title ,let i = index"  interface="action-sheet">
+        <ion-label no-text-wrap class="title-text" stacked>{{catagory.name}}
+          <span class="red-star" *ngIf="isRedStar(i)">*</span>
+        </ion-label>
+        <ion-select  *ngIf="i < 2||i > 6" (ionChange)="getValue(typeForm.value,i)"  class="type-selest-option" formControlName="{{catagory.nameControl}}">
+          <ion-option *ngFor="let item of items[i]" value="{{item.key}}">{{item.value}}</ion-option>
+        </ion-select>
+        
+        <select-searchable 
+        *ngIf="i > 1 && i < 7"
+        class="type-selest-option" 
+        item-content 
+        formControlName="{{catagory.nameControl}}"
+        [items]="items[i]"
+        itemValueField="key"
+        itemTextField="value"  
+        [canSearch]="true" 
+        (onChange)="getValue($event,i)"
+         selected ="true">
+       
+        </select-searchable>
+
+      </ion-item>
+
+    </ion-list>
+
+    <ion-row class="row-bottom">
+      <ion-col col-6>
+        <button float-right class="right-button" ion-button icon-start (tap)="startSearch(typeForm.value)">
+          ค้นหา
+        </button>
+      </ion-col>
+
+      <ion-col col-6>
+        <button float-left class="left-button" ion-button icon-end (tap)="clearData()">
+          ล้างข้อมูล
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+  <ion-grid *ngIf="result.length != 0" class="row-table">
+      <ion-row >
+        <ion-col class="col-green" col-3>
+          <p>ลำดับ</p>  
+        </ion-col>
+  
+        <ion-col class="col-green">
+          <p>รายการสินค้า</p>  
+        </ion-col>
+  
+      </ion-row>
+      
+      <ion-row *ngFor="let item of result, let i = index" class="col-gray-detail">
+        <ion-col   col-3>
+          <p > {{item.run}}</p>  
+        </ion-col>
+  
+
+        <ion-col class="col-gray-detail">
+         <p>{{item.product_name}} </p>  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+</ion-content>

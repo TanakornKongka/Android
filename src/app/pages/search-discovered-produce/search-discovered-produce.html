@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title left>ค้นหาสินค้าที่สำรวจแล้ว</ion-title>
+
+  </ion-navbar>
+
+  <ion-segment mode="md" [(ngModel)]="searchTitle" (ionChange)="getInformation(searchTitle)"
+    [style.background]="util.updateThemeColor(3).gradient">
+    <ion-segment-button value="1">
+      ค้นหาตามหมวดสินค้า
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      ค้นหาตามพื้นที่สำรวจ
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup]="typeForm" class="form-text">
+    <ion-list class="list-search-type" no-margin>
+
+      <div *ngFor="let catagory of title; let i = index">
+        <!-- <ion-item *ngIf="items[i][0].value == 2561 || items[i] != undefined && items[i].length > 1 && i != 6 && i != 7 || searchTitle == 2" -->
+        <ion-item *ngIf="items[i].length > 1 && items[i] != undefined && i != 6 && i != 7"
+          interface="action-sheet">
+          <ion-label class="title-text"
+            *ngIf="i != 6 && i != 7 || searchTitle == 2" stacked>
+            {{catagory.name}}
+            <span class="red-star" *ngIf="isRedStar(i)">*</span>
+          </ion-label>
+          <ion-select placeholder="{{intialTitle(i)}}" [disabled]="isDisable(i)" interface="action-sheet"
+            *ngIf="isDisable(i)" (ionChange)="getValue(typeForm.value,i)" class="type-selest-option"
+            formControlName="{{catagory.nameControl}}">
+            <ion-option selected="i=0" *ngFor="let item of items[i]" value="{{item.key}}">{{item.value}}</ion-option>
+          </ion-select>
+
+          <select-searchable *ngIf="i != 6 && i != 7 || searchTitle == 2"
+            placeholder="{{catagory.firstChoice}}" class="type-selest-option bg-gray" item-content
+            formControlName="{{catagory.nameControl}}" [items]="items[i]" itemValueField="key" itemTextField="value"
+            (onChange)="getValue(typeForm.value,i)" selected="true">
+          </select-searchable>
+
+        </ion-item>
+      </div>
+      <ion-row>
+        <ion-col col-12>
+          <div *ngIf="searchTitle == 1 && checkGrouoId()">
+            <ion-item>
+              <ion-label class="title-text" stacked>ยี่ห้อหลัก ยี่ห้อรอง แบบ/รุ่น (รายละเอียดสินค้า) <span class="red-star">*</span></ion-label>
+              <ion-input class="text-input-productName" type="text" formControlName="productName"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <div *ngFor="let catagory of title; let i = index">
+            <ion-item *ngIf="i == 6">
+              <ion-label class="title-text" stacked>
+                {{catagory.name}}
+                <span class="red-star" *ngIf="isRedStar(i)">*</span>
+              </ion-label>
+              <select-searchable placeholder="{{catagory.firstChoice}}" class="type-selest-option bg-gray" item-content
+                formControlName="surveyNo" [items]="items[i]" itemValueField="key" itemTextField="value"
+                (onChange)="getValue(typeForm.value,i)" selected="true">
+              </select-searchable>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <div *ngFor="let catagory of title; let i = index">
+            <ion-item *ngIf="i == 7">
+              <ion-label class="title-text" stacked>
+                {{catagory.name}}
+                <span class="red-star" *ngIf="isRedStar(i)">*</span>
+              </ion-label>
+              <select-searchable placeholder="{{catagory.firstChoice}}" class="type-selest-option bg-gray" item-content
+                formControlName="yearSurvey" [items]="items[i]" itemValueField="key" itemTextField="value"
+                (onChange)="getValue(typeForm.value,i)" selected="true">
+              </select-searchable>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row padding-left>
+        <ion-col col-6>
+          <span class="title-text">วันที่เริ่มต้น</span>
+          <ion-row class="type-selest-option">
+            <ion-col no-padding col-9>
+              <ion-datetime no-padding lang="th" formControlName="surveyDateTo" [monthNames]="thMonth"
+                displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="surveyDateTo"
+                [pickerOptions]="customOptionsTo" [min]="yearPast" [max]="yearCurrent" doneText="ตกลง"
+                cancelText="ยกเลิก">
+              </ion-datetime>
+            </ion-col>
+            <ion-col col-3 *ngIf="typeForm.value.surveyDateTo != '' " col-3 (tap)=clearDateTo()>
+              <ion-icon name="close"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+
+        <ion-col col-6>
+          <span class="title-text">ถึงวันที่</span>
+          <ion-row class="type-selest-option">
+            <ion-col no-padding col-9>
+              <ion-datetime no-padding lang="th" [monthNames]="thMonth" displayFormat="DD/MM/YYYY"
+                pickerFormat="DD MMMM YYYY" [pickerOptions]="customOptionsFrom" formControlName="surveyDateFrom"
+                [min]="yearPast" [max]="yearCurrent" doneText="ตกลง" cancelText="ยกเลิก">
+              </ion-datetime>
+            </ion-col>
+            <ion-col col-3 *ngIf="typeForm.value.surveyDateFrom != '' " (tap)=clearDateFrom()>
+
+              <ion-icon name="close"></ion-icon>
+
+            </ion-col>
+
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+    </ion-list>
+
+  </form>
+
+</ion-content>
+
+<ion-footer [style.background]="util.updateThemeColor(3).light" (tap)="startSearch(typeForm.value)">
+  <button clear class="search-button title-foot" ion-button icon-start ion-button icon-only>
+    <ion-icon name="ios-search" [style.color]="util.updateThemeColor(3).dark"></ion-icon>
+    <span class="title-page" [style.color]="util.updateThemeColor(3).dark">ค้นหา</span>
+  </button>
+</ion-footer>

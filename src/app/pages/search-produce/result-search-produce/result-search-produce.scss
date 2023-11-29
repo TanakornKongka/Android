@@ -1,0 +1,108 @@
+page-result-search-produce {
+    ion-header{
+
+
+        border-bottom: #EEF0F5 2px solid;
+        ion-icon.back-button-icon.icon {
+            padding: 0px !important;
+            margin: 0px !important;
+            text-align: left !important;
+            color: color($colors, f-white)!important;
+        }
+
+        .toolbar-title {
+            color: color($colors, f-white) !important;
+        }
+       
+        .title-page{
+            font-size: 20px;
+            font-weight: bolder !important;
+            color: color($colors, f-white);
+        }
+
+        .amount-list{
+            font-size: 20px;
+            font-weight: bolder !important;
+        }
+
+        .small-text{
+            font-size: 12px;
+        }
+
+
+        .toolbar-background {
+            background-color: transparent !important; 
+        }
+
+        .bar-button {
+            padding: 16px;
+            color: color($colors, f-white) !important;
+        }
+        
+    }
+
+    ion-content{
+        .center-text{
+            text-align: center;
+            
+            border-bottom: color($colors,cloud) 1px solid;
+        }
+        .left-text{
+            text-align: left;
+            margin: 10px 0px;
+            p{
+                 font-size: $xxxs;
+                 color: color($colors, f-lightgray)
+            }
+           
+        }
+        .right-text{
+            text-align: right;
+            margin: 15px 0px;
+            p{
+                font-size: $xxxs;
+                color: color($colors, f-lightgray)
+            }
+        }
+        .text-type{
+            color: black;
+        }
+        .barcode-bg{
+            padding:10px 16px;
+            margin: 0px 20px;
+            margin-top: 10px;
+            border-radius: 5px; 
+        }
+        .padding-left-right{
+            padding: 0px 20px;
+        }
+        .blu-text{
+            font-size: $xxs;
+        }
+        h4{
+            font-size: $s;
+        }
+
+
+        .small-bordor{
+           margin: 25px 0px;
+
+        }
+        .border-left{
+            border-left: color($colors,cloud) 1px solid;
+        }
+        
+        .pb-1{
+            padding-bottom: 7px;
+        }
+        
+    }
+    
+
+}
+ion-popover{
+    .popover.popover-arrow::after {
+        width: 0px !important; 
+        height: 0px !important; 
+    }
+}

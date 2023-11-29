@@ -1,0 +1,9 @@
+@mixin content-styles($top-color, $bottom-color) {
+    // background: linear-gradient(to bottom, $top-color 25%, $top-color 0, $bottom-color 0, $bottom-color 100%);
+    background-color: color($colors, f-white);
+}
+
+ion-content {
+    // @include content-styles(color($colors, f-red), color($colors, f-white));
+   // background-color: color($colors, f-light) !important;
+}
