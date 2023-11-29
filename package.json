@@ -66,10 +66,9 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.2.4",
+    "@ionic/app-scripts": "^3.2.4",
     "@ionic/cli-plugin-cordova": "1.6.2",
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
-    "@types/lodash": "^3.10.3",
     "cordova-android": "^6.3.0",
     "cordova-android-support-gradle-release": "^3.0.1",
     "cordova-plugin-badge": "^0.8.9",
@@ -92,7 +91,8 @@
     "ionic-plugin-keyboard": "^2.2.1",
     "node-bourbon": "^4.2.8",
     "phonegap-plugin-barcodescanner": "^8.1.0",
-    "typescript": "^2.3.4"
+    "@types/lodash": "^4.14.179",
+"typescript": "^3.9.10"
   },
   "description": "An Ionic project",
   "cordova": {
