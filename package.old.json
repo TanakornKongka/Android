@@ -88,10 +88,10 @@
     "@ionic/app-scripts": "3.2.0",
     "@ionic/cli-plugin-cordova": "1.6.2",
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
-    "@types/lodash": "^3.10.3",
     "ionic": "4.1.2",
     "node-bourbon": "^4.2.8",
-    "typescript": "^2.3.4"
+    "@types/lodash": "^4.14.179",
+    "typescript": "^3.9.10"
   },
   "description": "An Ionic project",
   "cordova": {
